@@ -10,7 +10,8 @@
 </head>
 <body>
     <header>
-    
+    </header>
+
     <main>
         <div>
             <div class='row' id='tradeMyCards'>
@@ -18,21 +19,35 @@
                 <div class='container'>
                     <div class='card'>
                         <!-- Create this element in JQuery getting api img and appending to <p> -->
-                        <p id='img-holder'></p>
+                        <div id='img-holder'>
+                            <p>IMG HOLDER</p>
+                        </div>
                         <!-- Create <p> elements and append to card-content -->
                         <div class='card-content'></div>
                     </div>
                 </div>
             </div>
-            <div class='row'>
-                <button></button>
+            <div class='row' id='matchSelection'>
+                <button id='matchBtn'></button>
                 <div></div>
-            </div class='row'>
-            <div id='tradeCards'></div>
+            </div>
+            <div id='tradeNewCards' class='row'>                
+                <!-- Search bar -->
+                <div class='container'>
+                    <div class='card'>
+                        <!-- Create this element in JQuery getting api img and appending to <p> -->
+                        <div id='trade-img-holder'>
+                            <p>TRADE IMG HOLDER</p>
+                        </div>
+                        <!-- Create <p> elements and append to card-content -->
+                        <div class='card-content'></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
-    </header>
+    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
