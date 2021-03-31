@@ -3,6 +3,10 @@
     color: #eaedf1;
 }
 
+main {
+    margin-top: 10px;
+}
+
 nav {
     background-color: #43464b;
     color: #f0f1f3;
@@ -11,6 +15,10 @@ nav {
 body {
     background-color: blue;
     color: #f0f1f3
+}
+
+p {
+    color: #43464b
 }
 
 .navbar-brand {
@@ -26,10 +34,33 @@ div {
 }
 
 aside {
-    margin-left: 5%;
+    display: block;
+    margin-left: 20px;
+    padding: 20px;
+    border-top: 10px;
+    clear: both;
+    float: left;
+    width: 20%;
+    height: 100%;
+    color: #43464b;
+    background-color: #f0f1f3
+
+}
+
+#mainContent {
+    display: flex;
+    justify-content: center;
+}
+
+#pageContainer {
+    display: flex;
+    flex-direction: row;
 }
 
 #info {
     display: flex;
-    border: solid;
+    flex-wrap: wrap;
+    margin-right: 50px;
+    margin-left: 15px
+    
 }
