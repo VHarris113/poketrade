@@ -29,6 +29,7 @@ aside {
     margin-left: 5%;
 }
 
-.container {
-    margin-left: 10px;
+#info {
+    display: flex;
+    border: solid;
 }
