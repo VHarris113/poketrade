@@ -1,25 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
     <link rel="stylesheet" href="assets/css/stylesheet.css">
-    <title>Document</title>
+    <title>Project 1 Homepage</title>
 </head>
+
 <body>
     <header>
-    
+        <nav class='navbar navbar-dark bg-dark' id='tradeMyCards'>
+            <!-- Search bar -->
+            <div class='container'>
+                <div class='card'>
+                    <!-- Create this element in JQuery getting api img and appending to <p> -->
+                    <p id='img-holder'></p>
+                    <!-- Create <p> elements and append to card-content -->
+                    <div class='card-content'></div>
+                </div>
+            </div>
+            <div class='row'>
+                <button></button>
+                <div></div>
+            </div class='row'>
+            <div id='tradeCards'></div>
+        </nav>
+
+    </header>
+
+
     <main>
 
+        <container class="container-med" id="pageContainer">
 
+            <section class="row">
+
+                <aside class="col-12 col-lg-3" id="info">
+                    <div class="row" id="siteInfo">Info about Site</div>
+                    <div class="row" id="editorsInfo">Info about editors</div>
+                </aside>
+
+                <section class="col-12 col-lg-9" id="mainContent">
+                    <section class="row" id="cardSelector">This is the card selector row</section>
+
+                    <section class="row" id="tradeBtnRow">This is where the trade button goes</section>
+
+                    <section class="row" id="howToRow">this is where the how to box goes</section>
+
+
+                </section>
+
+            </section>
+
+
+
+        </container>
 
 
 
     </main>
 
-    </header>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -32,4 +77,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
