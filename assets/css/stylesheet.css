@@ -1,6 +1,35 @@
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #eaedf1;
+}
+
+nav {
+    background-color: #43464b;
+    color: #f0f1f3;
+}
+
+body {
+    background-color: blue;
+    color: #f0f1f3
+}
+
+.navbar-brand {
+    color: #f0f1f3
+}
+
+h1 {
+    text-align: center;
+}
+
 div {
     color: red'
 }
-#pageContainer {
+
+aside {
     margin-left: 5%;
+}
+
+#info {
+    display: flex;
+    border: solid;
 }
