@@ -1,3 +1,12 @@
-var requestUrl = ""
 
-5571684c-1b3e-43e4-bf10-e8a81f760640
+function getApi() {
+    var requestUrl = "https://api.pokemontcg.io/v2/cards?orderBy=name.name:metagross" 
+    
+    fetch(requestUrl).then(function (response){
+        return response.json();
+    }).then(function (data){
+        console.log(data);
+    })
+}
+
+getApi();
