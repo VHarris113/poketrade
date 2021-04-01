@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
-    <link rel="stylesheet" href="assets/css/stylesheet.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <title>Project 1 Homepage</title>
 </head>
     <header>
@@ -36,7 +36,8 @@
 
     </header>
 <body>
-  <aside id="info">
+  <div class="row">
+  <aside class="col-12 col-lg-3" id="info">
     <div id="siteInfo">
       <h4>Info About Site</h4>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, quod beatae ad pariatur repudiandae fuga porro? Reprehenderit ut modi tenetur adipisci sint, mollitia temporibus aut animi placeat, atque dolores voluptatem.</p>
@@ -44,31 +45,28 @@
     <br>
     <div id="editorsInfo">
       <h4>Info About Editors</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut fugit nesciunt atque eius odio explicabo ipsam odit perspiciatis, modi magnam corporis esse provident maxime nam iste nemo iure amet tempora?</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam saepe, quo dicta cum perspiciatis ipsum ea soluta, veniam vitae repellendus voluptate unde sit dolorum aut, dolores sapiente quos voluptatum provident voluptatem laudantium. Earum saepe nesciunt, nobis fuga dolorum aperiam, modi aliquid vitae eaque, nostrum quo corrupti. Laudantium distinctio quam magni esse voluptatibus repellat rem delectus quas! Cumque, voluptate? Consectetur quam magnam dolore expedita, nulla quas. Voluptatem dolores officia repellat, placeat qui est reprehenderit iste. Recusandae aperiam non voluptatibus molestias sunt illum ipsa tenetur architecto alias accusamus maiores deserunt, aliquid vero perspiciatis temporibus distinctio omnis corporis? Ad pariatur excepturi soluta officiis rem nobis hic ipsam cupiditate nesciunt explicabo, eos possimus quod eligendi aperiam vel dolore in molestiae, ipsum architecto nam eveniet totam at consequatur! Nesciunt non minus officiis tempore, maxime unde quia enim assumenda nulla et explicabo impedit ab optio alias sit natus itaque? Explicabo placeat distinctio amet? A nostrum nam voluptate velit corporis, minus aut pariatur dolorem fugit soluta odio saepe modi eligendi totam ex unde architecto repellendus hic illum eveniet dolor perspiciatis? Commodi, aut harum reprehenderit, architecto natus ratione impedit est, tenetur libero ipsam perferendis sunt laborum pariatur ex adipisci repellendus in sint? Illum iste minima ratione sapiente magni?
+      </p>
     </div>
 </aside>
-    
-    <main>
+    <main class="col-lg-8">
         <container id="pageContainer">
                 <section>
                     <div id="mainContent"></div>
                       <section class="row" id="cardSelector">
                         <h2>This is the card selector row</h2>
                       </section>
-
-                    <section class="row" id="tradeBtnRow">
-                        <button type="button" class="btn btn-secondary btn-lg">Large button</button>
-                    </section>
-
                 </section>
         </container>
-    </main>
-    <footer>
+        
+        <section class="col-md-8" id="tradeBtnRow">
+          <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+      </section>
+
       <section id="howToRow">this is where the how to box goes</section>
+    </main>
+    </div>
 
-
-    </section>
-    </footer>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
