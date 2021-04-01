@@ -1,16 +1,22 @@
-
 var searchForm = $("#search-section");
 var pokemonSearchInput = $("#pokemon-search-term");
-var cardDisplay = $("#card-display")
+var cardDisplay = $("#card-display");
+
+var addButton = $("cardAddButton");
+var removeButton = $("cardRemoveButton");
 
 $( function() {
     $( "#sortable" ).sortable();
     $( "#sortable" ).disableSelection();
   } );
 
+function getStorage() {
+
+}
+
 function getApi() {
     var requestUrl = "https://api.pokemontcg.io/v2/cards?q=name:" + pokemonSearchInput.val() + "&orderBy=name"
-    var i = 0
+    // var i = 0
     fetch(requestUrl).then(function (response){
         return response.json();
     }).then(function (data){
@@ -44,12 +50,13 @@ function getApi() {
                 var imgUrl = data.data[i].images.small;
                 // var priceTag = data.data[i].tcgplayer.prices.holofoil.mid;
                 // console.log(priceTag);
+                var aTag = $("<a>");
                 var imageEl = $("<img>");
                 var priceEl = $("<p>")
                 priceEl.text("$0.00" + " - " + i);
                 imageEl.attr("src", imgUrl);
-                priceEl.append(imageEl);
-                cardDisplay.append(priceEl);
+                aTag.append(imageEl, priceEl);
+                cardDisplay.append(aTag);
             }
             // imageEl.append($("<p>").text("$" + priceTag));
             // cardDisplay.append(imageEl); 
@@ -65,5 +72,16 @@ searchForm.on("submit", function(event) {
     event.preventDefault();
     cardDisplay.empty();
     getApi();
-    
 })
+
+// add card to local storage
+addButton.on("submit", function() {
+    console.log('Card added to collection.')
+    // event.preventDefault();
+    // if () {
+
+    // } else {
+    //     return;
+    // }
+});
+// remove card from local storage
