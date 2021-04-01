@@ -41,6 +41,10 @@ aside {
     background-color: #f0f1f3;
 }
 
+text {
+    text-align:center
+}
+
 #info {
     box-sizing: content-box;
     width: 20%;
@@ -50,7 +54,6 @@ aside {
     margin-left: 10px;
     float: left;
     background-color: #43464b;
-    
 }
 
 #siteInfo {
@@ -78,7 +81,7 @@ aside {
     width: 90%;
     height: 400px;
     margin-top: 10px;
-    margin-right: 50px;
+    padding: 10px;
     box-sizing: content-box;
     background-color: #43464b;
     
@@ -90,21 +93,43 @@ aside {
     justify-content: center;
     float: right;
     width: 90%;
-    height: 400px;
+    height: 250px;
     margin-top: 10px;
-    margin-right: 50px;
+    padding: 10px;
     box-sizing: content-box;
     background-color: #43464b;
 }
 
+#howToRow h2 {
+    padding: 10px;
+    color:#f0f1f3;
+}
+#howToRow p {
+    padding: 10px;
+    background-color: #f0f1f3;
+}
+
 #tradeBtnRow {
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-bottom: 25px;
     float: right;
-    margin-right: -125px;
+    margin-right: -150px;
     box-shadow: #f0f1f3;
 }
 
 .btn {
+    color: #010203;
     box-sizing: content-box;
+    padding: 20pt;
+    background-color: #a6d9db;
     border-color: #07080a;
+    align-content: center;
+}
+
+.btn:hover {
+    background-color: #e61818;
+}
+
+.btn:active {
+    background-color: #f17f7f;
 }
