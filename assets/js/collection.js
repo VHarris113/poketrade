@@ -10,7 +10,7 @@ function getApi() {
         return response.json();
     }).then(function (data){
         console.log(data);
-        console.log(data.data[0].tcgplayer.prices.normal.mid)
+        // console.log(data.data[0].tcgplayer.prices.normal.mid)
         // console.log(data.data.images.small)
         // showCard()
         for (var i = 0; i < data.data.length; i++){
