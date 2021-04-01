@@ -34,7 +34,6 @@ div {
     flex-direction: row;
     justify-content: center;
     float: right;
-    width: 90%;
     height: 400px;
     margin-top: 10px;
     margin-right: 50px;
@@ -61,6 +60,7 @@ div {
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 20px;
+    width: 1000px;
 
 }
 
