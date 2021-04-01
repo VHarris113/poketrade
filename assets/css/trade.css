@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    float: right;
+    float:left;
     margin-top: 10px;
-    margin-right: 50px;
+    margin-left: 50px;
     box-sizing: content-box;
     background-color: #43464b;
 }

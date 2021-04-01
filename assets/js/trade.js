@@ -9,20 +9,28 @@ var pokeName;
 var myCardImg = $('#img-holder');
 var tradeImg = $('#trade-img-holder');
 
+var button = $('#matchBtn');
+
+// var getCardHistory =  || [];
+
 function getMyCard() {
-    var tradeCardApi = 'https://api.pokemontcg.io/v2/cards?q=name:' + mySearchInput.val() +'&orderBy=name';
+    imgUrl = JSON.parse(localStorage.getItem("storedCard"));
+    var imgEl = $('<img>');
+    imgEl.attr('src', imgUrl);
+    myCardImg.append(imgEl);
+    // var tradeCardApi = 'https://api.pokemontcg.io/v2/cards?q=name:' + mySearchInput.val() +'&orderBy=name';
     
-    fetch(tradeCardApi).then(function(response){
-        return response.json();
-    }).then(function (data) {
-        console.log(data);
-        for (var i = 0; i < data.data.length; i++) {
-            imgUrl = data.data[i].images.small;
-            var imgEl = $('<img>');
-            imgEl.attr('src', imgUrl);
-            myCardImg.append(imgEl);
-        }
-    })
+    // fetch(tradeCardApi).then(function(response){
+    //     return response.json();
+    // }).then(function (data) {
+    //     console.log(data);
+    //     for (var i = 0; i < data.data.length; i++) {
+    //         imgUrl = data.data[i].images.small;
+    //         var imgEl = $('<img>');
+    //         imgEl.attr('src', imgUrl);
+    //         myCardImg.append(imgEl);
+    //     }
+    // })
 }
 
 function getTradeCard() {
@@ -38,7 +46,12 @@ function getTradeCard() {
             imgEl.attr('src', imgUrl);
             tradeImg.append(imgEl);
         }
-    })
+    // button.on('click', function(event) {
+    //     event.preventDefault();
+    //     localStorage.setItem("storedCard", JSON.stringify(data.data[0].images.small)); 
+    // })
+    
+    }) 
 }
 mySearch.on('submit', function (event) {
     event.preventDefault();
@@ -57,3 +70,4 @@ searchForm.on('submit', function (event) {
     // console.log(pokeName);
     getTradeCard();
 });
+
