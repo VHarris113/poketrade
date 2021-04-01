@@ -1,6 +1,10 @@
 * {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #eaedf1;
+}
+
+
+main {
+    justify-content: flex-end;
 }
 
 nav {
@@ -9,7 +13,7 @@ nav {
 }
 
 body {
-    background-color: blue;
+    background-color: #0961d3;
     color: #f0f1f3
 }
 
@@ -26,10 +30,45 @@ div {
 }
 
 aside {
-    margin-left: 5%;
+    color: #43464b;
+    border-style: solid;
+    box-sizing: content-box;
+    padding: 10px;
+    border-top: 20px;
+    clear: both;
+    left: 30px;
+    height: 100%;
+    background-color: #f0f1f3;
 }
 
 #info {
+    box-sizing: content-box;
+    width: 20%;
+    height: 100%;
+    margin-top: 10px;
+    flex-direction: column;
+    margin-left: 10px;
+    float: left;
+    
+}
+
+#siteInfo {
+    color: #f0f1f3;
+    background-color: #43464b;
+}
+
+#editorsInfo {
+    color: #f0f1f3;
+    background-color: #43464b;
+   
+}
+
+#mainContent {
     display: flex;
-    border: solid;
+    justify-content: center;
+}
+
+#pageContainer {
+    display: flex;
+    flex-direction: row;
 }
