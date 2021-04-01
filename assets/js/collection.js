@@ -32,7 +32,7 @@ function getApi() {
             } else if (data.data[i].tcgplayer && data.data[i]?.tcgplayer.prices.holofoil){
                 var imgUrl = data.data[i].images.small;
                 var priceTag = data.data[i].tcgplayer.prices.holofoil.mid;
-                console.log(priceTag);
+                // console.log(priceTag);
                 var imageEl = $("<img>");
                 var priceEl = $("<p>")
                 priceEl.text("$" + priceTag + " - " + i);
@@ -40,7 +40,7 @@ function getApi() {
                 priceEl.append(imageEl);
                 cardDisplay.append(priceEl);
             } else if (!data.data[i].tcgplayer) {
-                console.log("next");
+                // console.log("next");
                 var imgUrl = data.data[i].images.small;
                 // var priceTag = data.data[i].tcgplayer.prices.holofoil.mid;
                 // console.log(priceTag);
