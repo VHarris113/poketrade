@@ -1,32 +1,58 @@
-#cardsColumn {
-    display: flex;
-    justify-content: space-around;
-    align-items: space-around;
+main {
+    margin-left: 30px;
+    margin-left: 30px;
 }
 
-#sortable {
-    display: flex;
-    justify-content: space-around;
-    text-wrap: wrap;
-    align-items: space-around;
+#collectionPage {
+    margin: 40px;
+
 }
 
-#sortable li {[
+.collectionImage {
+    width: 170px;
+    height: 200px;
+    margin: 10px;
+}
+
+#cardsRow {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+
+}
+
+.searchBtn {
+    background-color: #f5b342;
+    width: 30px;
+    height: 30px;
+}
+
+.list-group-item.active {
+    background-color: #f5b342;
+}
+
+#sortable { width: 100%; list-style-type: none; margin: 0; padding: 0;  }
+  #sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 100px; height: 90px; font-size: 4em; text-align: center; }
+
+ul {
+    width: 100%;
+}
+
+#sortable li {
     width: 50px;
     height: 75px;
     margin:20px;
     padding: 20px;
-    
+} 
 
-]}
+
 /* display: flex;
 justify-content: space-around;
 align-items: space around;} */
   
 
-.row {
-    border: medium solid black;
-}
 
 /* #sortable { list-style-type: none; margin: 0; padding: 0; width: 95%; }
 
