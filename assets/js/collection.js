@@ -10,7 +10,7 @@ var cardIndex = [];
 $( function() {
     $( "#sortable" ).sortable();
     $( "#sortable" ).disableSelection();
-  } );
+});
 
 function getStorage() {
 
@@ -85,8 +85,6 @@ searchForm.on("submit", function(event) {
     cardDisplay.empty();
     getApi();
 })
-
-
     
     // addButton.on("click", function() {
     //     console.log('Card added to collection.');
