@@ -1,6 +1,7 @@
 var searchForm = $("#search-section");
 var pokemonSearchInput = $("#pokemon-search-term");
 var cardDisplay = $("#card-display");
+var imageCollectionBox = $("#sortable");
 
 var addButton = $("#cardAddButton");
 var removeButton = $("#cardRemoveButton");
@@ -15,6 +16,8 @@ $( function() {
 function getStorage() {
 
 }
+
+
 
 function getApi() {
     var requestUrl = "https://api.pokemontcg.io/v2/cards?q=name:" + pokemonSearchInput.val() + "&orderBy=name"
