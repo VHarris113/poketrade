@@ -11,17 +11,18 @@ function getApi() {
     }).then(function (data){
         console.log(data);
         // console.log(data.data.images.small)
-        showCard(data.data[i].images.small)
+        // showCard()
+        for (var i = 0; i < data.data.length; i++){
+                var imgUrl = data.data[i].images.small;
+                var imageEl = $("<img>");
+                imageEl.attr("src", imgUrl);
+                cardDisplay.append(imageEl);
+                }
     })
 }
 
-function showCard(imgUrl){
-    for (var i = 0; i < imgUrl.length; i++){
-            var imageEl = $("<img>");
-            imageEl.attr("src", imgUrl);
-            cardDisplay.append(imageEl);
-            }
-}
+// function showCard(imgUrl){
+// }
 
 
 // getApi();
