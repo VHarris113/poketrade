@@ -21,15 +21,9 @@ body {
     color: #f0f1f3
 }
 
-h1 {
-    text-align: center;
-}
 
-div {
-    color: red;
-}
 
-.container {
+/* .container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -40,7 +34,7 @@ div {
     margin-right: 50px;
     box-sizing: content-box;
     background-color: #43464b;
-}
+} */
 
 #cardsColumn {
     display: flex;
