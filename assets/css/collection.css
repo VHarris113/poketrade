@@ -4,14 +4,14 @@ main {
 }
 
 #collectionPage {
-    margin: 50px;
+    margin: 40px;
 
 }
 
 .collectionImage {
-    width: 150px;
+    width: 170px;
     height: 200px;
-    margin: 5px;
+    margin: 10px;
 }
 
 #cardsRow {
@@ -19,20 +19,25 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin: 20px;
 
 }
 
-/* #cardsColumn {
-    display: flex;
-    justify-content: space-around;
-    align-items: space-around;
+.searchBtn {
+    background-color: #f5b342;
+    width: 30px;
+    height: 30px;
 }
 
-#sortable {
-    display: flex;
-    justify-content: space-around;
-    text-wrap: wrap;
-    align-items: space-around;
+.list-group-item.active {
+    background-color: #f5b342;
+}
+
+#sortable { width: 100%; list-style-type: none; margin: 0; padding: 0;  }
+  #sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 100px; height: 90px; font-size: 4em; text-align: center; }
+
+ul {
+    width: 100%;
 }
 
 #sortable li {
@@ -40,9 +45,7 @@ main {
     height: 75px;
     margin:20px;
     padding: 20px;
-    
-
-} */
+} 
 
 
 /* display: flex;
