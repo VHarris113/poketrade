@@ -5,11 +5,13 @@
 
 main {
     justify-content: flex-end;
+    margin: 30px;
 }
 
 nav {
     background-color: #43464b;
     color: #f0f1f3;
+    background-color: gray;
 }
 
 body {
@@ -19,17 +21,14 @@ body {
 
 .navbar-brand {
     color: #f0f1f3
+    
 }
 
-h1 {
-    text-align: center;
+#collectionPage {
+    margin: 50px;
 }
 
-div {
-    color: red;
-}
-
-.container {
+/* .container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -39,7 +38,7 @@ div {
     margin-right: 50px;
     box-sizing: content-box;
     background-color: #43464b;
-}
+} */
 
 #cardsColumn {
     display: flex;
@@ -49,8 +48,8 @@ div {
 }
 
 .collectionImage {
-    width: 170px;
-    height: 200px;
+    width: 165px;
+    height: 220px;
     margin: 10px;
 }
 
@@ -59,6 +58,7 @@ div {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: space-around;
     margin: 20px;
     width: 1000px;
 
@@ -79,6 +79,12 @@ div {
 
 ul {
     width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: space-around;
+
 }
 
 #sortable li {
