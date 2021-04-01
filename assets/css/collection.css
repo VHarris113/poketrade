@@ -1,4 +1,28 @@
-#cardsColumn {
+main {
+    margin-left: 30px;
+    margin-left: 30px;
+}
+
+#collectionPage {
+    margin: 50px;
+
+}
+
+.collectionImage {
+    width: 150px;
+    height: 200px;
+    margin: 5px;
+}
+
+#cardsRow {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+/* #cardsColumn {
     display: flex;
     justify-content: space-around;
     align-items: space-around;
@@ -11,22 +35,21 @@
     align-items: space-around;
 }
 
-#sortable li {[
+#sortable li {
     width: 50px;
     height: 75px;
     margin:20px;
     padding: 20px;
     
 
-]}
+} */
+
+
 /* display: flex;
 justify-content: space-around;
 align-items: space around;} */
   
 
-.row {
-    border: medium solid black;
-}
 
 /* #sortable { list-style-type: none; margin: 0; padding: 0; width: 95%; }
 
