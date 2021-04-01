@@ -1,7 +1,12 @@
+
 var searchForm = $("#search-section");
 var pokemonSearchInput = $("#pokemon-search-term");
 var cardDisplay = $("#card-display")
 
+$( function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  } );
 
 function getApi() {
     var requestUrl = "https://api.pokemontcg.io/v2/cards?q=name:" + pokemonSearchInput.val() + "&orderBy=name"
