@@ -2,8 +2,10 @@ var searchForm = $("#search-section");
 var pokemonSearchInput = $("#pokemon-search-term");
 var cardDisplay = $("#card-display");
 
-var addButton = $("cardAddButton");
-var removeButton = $("cardRemoveButton");
+var addButton = $("#cardAddButton");
+var removeButton = $("#cardRemoveButton");
+
+var cardIndex = [];
 
 $( function() {
     $( "#sortable" ).sortable();
@@ -62,10 +64,20 @@ function getApi() {
             // cardDisplay.append(imageEl); 
             // put if it doesn't exist first
         }
-        
+    // select card
+    
+    // add card to local storage
+    addButton.on("click", function() {
+        console.log('Card added to collection.');
+        button.on('click', function(event) {
+            event.preventDefault();
+            if (cardDisplay)
+                localStorage.setItem("storedCard", JSON.stringify(data.data[0].images.small)); 
+        })
+    });     
+    
     })
 }
-
 
 // getApi();
 searchForm.on("submit", function(event) {
@@ -74,14 +86,21 @@ searchForm.on("submit", function(event) {
     getApi();
 })
 
-// add card to local storage
-addButton.on("submit", function() {
-    console.log('Card added to collection.')
-    // event.preventDefault();
-    // if () {
 
-    // } else {
-    //     return;
-    // }
-});
+    
+    // addButton.on("click", function() {
+    //     console.log('Card added to collection.');
+    //     button.on('click', function(event) {
+    //         event.preventDefault();
+    //         localStorage.setItem("storedCard", JSON.stringify(data.data[0].images.small)); 
+    //     })
+        // if () {
+
+        // } else {
+        //     return;
+        // }
+    
 // remove card from local storage
+removeButton.on("click", function() {
+    console.log("Card has been removed from collection.")
+});
