@@ -2,5 +2,10 @@ div {
     color: red'
 }
 #pageContainer {
-    margin-left: 5%;
+    margin: 20px;
+    
+}
+
+h1 {
+    color: red;
 }
