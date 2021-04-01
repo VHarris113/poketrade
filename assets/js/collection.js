@@ -10,11 +10,16 @@ function getApi() {
         return response.json();
     }).then(function (data){
         console.log(data);
+        console.log(data.data[0].tcgplayer.prices.normal.mid)
         // console.log(data.data.images.small)
         // showCard()
         for (var i = 0; i < data.data.length; i++){
                 var imgUrl = data.data[i].images.small;
+                // var priceTag = data.data[i].tcgplayer.prices.normal.mid;
                 var imageEl = $("<img>");
+                var priceEl = $("<p>")
+                // priceEl.text("$" + priceTag);
+                // imageEl.append(priceEl);
                 imageEl.attr("src", imgUrl);
                 cardDisplay.append(imageEl);
                 }
