@@ -117,7 +117,7 @@ text {
     box-shadow: #f0f1f3;
 }
 
-.btn {
+.btn2 {
     color: #010203;
     box-sizing: content-box;
     padding: 20pt;
@@ -126,10 +126,16 @@ text {
     align-content: center;
 }
 
-.btn:hover {
+.btn2:hover {
     background-color: #e61818;
 }
 
-.btn:active {
+.btn2:active {
     background-color: #f17f7f;
+}
+
+.cardlist {
+    display: flex;
+    list-style:none;
+    justify-content: space-around;
 }
