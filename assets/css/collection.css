@@ -29,14 +29,18 @@ div {
     color: red;
 }
 
+aside {
+    float:right;
+}
+
 .container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    float: right;
+    float: left;
     height: 400px;
     margin-top: 10px;
-    margin-right: 50px;
+    margin-left: 20px;
     box-sizing: content-box;
     background-color: #43464b;
 }
