@@ -49,33 +49,62 @@ aside {
     flex-direction: column;
     margin-left: 10px;
     float: left;
+    background-color: #43464b;
     
 }
 
 #siteInfo {
-    color: #f0f1f3;
-    background-color: #43464b;
+    color: #43464b;
+    background-color: #f0f1f3;
 }
 
 #editorsInfo {
-    color: #f0f1f3;
-    background-color: #43464b;
+    color: #43464b;
+    background-color: #f0f1f3;
    
 }
 
 #mainContent {
     display: flex;
     justify-content: center;
+
 }
 
 #pageContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    float: right;
+    width: 90%;
+    height: 400px;
+    margin-top: 10px;
+    margin-right: 50px;
+    box-sizing: content-box;
+    background-color: #43464b;
+    
 }
 
 #howToRow {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    float: right;
+    width: 90%;
+    height: 400px;
+    margin-top: 10px;
+    margin-right: 50px;
+    box-sizing: content-box;
+    background-color: #43464b;
+}
+
+#tradeBtnRow {
+    margin-top: 50px;
+    float: right;
+    margin-right: -125px;
+    box-shadow: #f0f1f3;
+}
+
+.btn {
+    box-sizing: content-box;
+    border-color: #07080a;
 }
