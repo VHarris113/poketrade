@@ -5,11 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
-    <link rel="stylesheet-trade" href="\assets\css\trade.css" ">
+
+    <link rel="stylesheet-trade" href="./assets/css/trade.css" ">
     <title>Document</title>
 </head>
 <body>
     <header>
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#">PokéTrade.io</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./homepage.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./collection.html">Collection</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./trade.html">Trade</a>
+              </ul>
+            </div>
+          </nav>
     </header>
 
     <main>
@@ -22,12 +42,12 @@
                         placeholder='search'
                         aria-label='search'
                     >
+                    <button id='collectionSearchBtn' type='submit'>(s)</button>
                 </form>
                 <div class='container'>
                     <div class='card'>
                         <!-- Create this element in JQuery getting api img and appending to <p> -->
                         <div id='img-holder'>
-                            <p>IMG HOLDER</p>
                         </div>
                         <!-- Create <p> elements and append to card-content -->
                         <div class='card-content'></div>
@@ -35,8 +55,8 @@
                 </div>
             </div>
             <div class='row' id='matchSelection'>
-                <button id='matchBtn'></button>
-                <div></div>
+                <button id='matchBtn'>Match</button>
+                <div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad velit voluptas voluptatibus doloribus, natus architecto obcaecati earum hic deleniti quam!</p></div>
             </div>
             <div id='tradeNewCards' class='row'>                
                 <form id='tradeSearch'>
@@ -46,13 +66,12 @@
                         placeholder='search'
                         aria-label='search'
                     >
-                    <button id='tradeSearchBtn'>(s)</button>
+                    <button id='tradeSearchBtn' type='submit'>(s)</button>
                 </form>
                 <div class='container'>
                     <div class='card'>
                         <!-- Create this element in JQuery getting api img and appending to <p> -->
                         <div id='trade-img-holder'>
-                            <p>TRADE IMG HOLDER</p>
                         </div>
                         <!-- Create <p> elements and append to card-content -->
                         <div class='card-content'></div>
