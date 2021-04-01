@@ -1,10 +1,30 @@
+.row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    float:left;
+    margin-top: 10px;
+    margin-left: 50px;
+    box-sizing: content-box;
+    background-color: #43464b;
+}
 
-
-.row { 
-    
+.container {
+    height: 500px;
+    width: 460px;
+    box-sizing: content-box;
+    background-color: #43464b;
 }
 
 #tradeContainer {
-    
+    display: flex;
 }
 
+#matchSelection {
+    max-width: 10%;
+}
+
+#matchText {
+    color: white;
+    padding: 15px;
+}
