@@ -14,24 +14,40 @@ function getApi() {
         // console.log(data.data.images.small)
         // showCard()
         for (var i = 0; i < data.data.length; i++){
+            if (data.data[i].tcgplayer.prices.normal) {
                 var imgUrl = data.data[i].images.small;
-                // var priceTag = data.data[i].tcgplayer.prices.normal.mid;
+                var priceTag = data.data[i].tcgplayer.prices.normal.mid;
+                console.log(priceTag);
                 var imageEl = $("<img>");
                 var priceEl = $("<p>")
-                // priceEl.text("$" + priceTag);
-                // imageEl.append(priceEl);
+                priceEl.text("$" + priceTag);
                 imageEl.attr("src", imgUrl);
-                cardDisplay.append(imageEl);
-                }
+                priceEl.append(imageEl);
+                cardDisplay.append(priceEl);
+            } else if (data.data[i].tcgplayer.prices.holofoil){
+                var imgUrl = data.data[i].images.small;
+                var priceTag = data.data[i].tcgplayer.prices.holofoil.mid;
+                console.log(priceTag);
+                var imageEl = $("<img>");
+                var priceEl = $("<p>")
+                priceEl.text("$" + priceTag);
+                imageEl.attr("src", imgUrl);
+                priceEl.append(imageEl);
+                cardDisplay.append(priceEl);
+            } else if (data.data[i].tcgplayer === "") {
+                return
+            }
+            // imageEl.append($("<p>").text("$" + priceTag));
+            // cardDisplay.append(imageEl);
+        }
+        
     })
 }
-
-// function showCard(imgUrl){
-// }
 
 
 // getApi();
 searchForm.on("submit", function(event) {
     event.preventDefault();
     getApi();
+    
 })
