@@ -34,7 +34,7 @@ function getApi() {
                 imageEl.attr("src", imgUrl);
                 priceEl.append(imageEl);
                 cardDisplay.append(priceEl);
-            } else if (data.data[i].tcgplayer === "") {
+            } else if (data.data[i].) {
                 return
             }
             // imageEl.append($("<p>").text("$" + priceTag));
