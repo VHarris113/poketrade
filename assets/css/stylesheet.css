@@ -26,7 +26,7 @@ h1 {
 }
 
 div {
-    color: red'
+    color: red;
 }
 
 aside {
@@ -69,15 +69,6 @@ aside {
 }
 
 #pageContainer {
-<<<<<<< HEAD
-    margin: 20px;
-    
-}
-
-h1 {
-    color: red;
-=======
     display: flex;
     flex-direction: row;
->>>>>>> fe812db59f5c9a6d1ac2d35c03ed0c38c8d39bcb
 }
