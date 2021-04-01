@@ -17,7 +17,7 @@ function getStorage() {
 }
 
 function getApi() {
-    var requestUrl = "https://api.pokemontcg.io/v2/cards?q=name:" + pokemonSearchInput.val() + "&orderBy=name"
+    var requestUrl = "https://api.pokemontcg.io/v2/cards?q=name:" + pokemonSearchInput.val() + "&orderBy=name";
     // var i = 0
     fetch(requestUrl).then(function (response){
         return response.json();
@@ -65,18 +65,20 @@ function getApi() {
             // put if it doesn't exist first
         }
     // select card
-    
+    aTag.on('click', function() {
+        cardIndex === data.data.length;
+    });
     // add card to local storage
     addButton.on("click", function() {
         console.log('Card added to collection.');
         button.on('click', function(event) {
             event.preventDefault();
-            if (cardDisplay)
+            if (cardIndex === data.data.length) {
                 localStorage.setItem("storedCard", JSON.stringify(data.data[0].images.small)); 
-        })
-    });     
-    
-    })
+            }
+        });      
+    });
+    });
 }
 
 // getApi();
@@ -84,6 +86,7 @@ searchForm.on("submit", function(event) {
     event.preventDefault();
     cardDisplay.empty();
     getApi();
+
 })
     
     // addButton.on("click", function() {
@@ -100,5 +103,5 @@ searchForm.on("submit", function(event) {
     
 // remove card from local storage
 removeButton.on("click", function() {
-    console.log("Card has been removed from collection.")
-});
+    console.log("Card has been removed from collection.");
+})
