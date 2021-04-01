@@ -14,7 +14,7 @@ nav {
 
 body {
     background-color: #0961d3;
-    color: #f0f1f3
+    color: #f0f1f3;
 }
 
 .navbar-brand {
@@ -71,4 +71,11 @@ aside {
 #pageContainer {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+}
+
+#howToRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
