@@ -32,6 +32,7 @@ h1 {
 }
 #searchColumn {
     padding-right: 30px;
+    position: initial;
 }
 
 #card-display {
@@ -40,11 +41,25 @@ h1 {
     font: 20px;
     font-weight: bold;
     width: 500px;
-    height: 500px;
-    overflow: scroll;
+    height: 750px;
+    overflow: auto;
+}
+
+#card-display img {
+    vertical-align: middle;
+    border-style: none;
+    margin: 20px;
+    margin-left: 110px;
 
 }
 
+#card-display p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-left: -4px;
+    text-align: center;
+    font-size: bolder;
+}
 
 
 #collectionPage {
@@ -60,10 +75,11 @@ h1 {
 }
 
 #cardsColumn {
+    position: relative;
     display: flex;
     justify-content: space-around;
-    align-items: space-around;
-    padding-right: 40px;
+    padding-right: 0px;
+    margin-left: 20px;
 
 } 
 

@@ -39,6 +39,7 @@ function getApi() {
                 var priceEl = $("<p>")
                 priceEl.text("$" + priceTag + " - " + i);
                 imageEl.attr("src", imgUrl);
+                imageEl.attr("data-index", i);
                 aTag.append(imageEl, priceEl);
                 cardDisplay.append(aTag);
             } else if (data.data[i].tcgplayer && data.data[i]?.tcgplayer.prices.holofoil){
@@ -50,6 +51,7 @@ function getApi() {
                 var priceEl = $("<p>")
                 priceEl.text("$" + priceTag + " - " + i);
                 imageEl.attr("src", imgUrl);
+                imageEl.attr("data-index", i);
                 aTag.append(imageEl, priceEl);
                 cardDisplay.append(aTag);
             } else if (!data.data[i].tcgplayer) {
@@ -62,19 +64,43 @@ function getApi() {
                 var priceEl = $("<p>")
                 priceEl.text("$0.00" + " - " + i);
                 imageEl.attr("src", imgUrl);
+                imageEl.attr("data-index", i);
                 aTag.append(imageEl, priceEl);
                 cardDisplay.append(aTag);
             }
 
         imageEl.on('click', function () {
-            cardIndex = data.data.indexOf();
+            cardIndex = $(this).attr("data-index");
             console.log(cardIndex);
+            
+            addButton.on("click", function() {
+                console.log('Card added to collection.');
+                if (cardIndex = data.data.length) {
+                    localStorage.setItem("storedCard", JSON.stringify(data.data[0].images.small)); 
+                }
+                // get card to collection storage
+                addToCollection();
+            }); 
+        
         });  
+        
+
+        function addToCollection() {
+            var getMyCard = JSON.parse(localStorage.getItem("storedCard"));
+            var collectionImg = $('<img>');
+            collectionImg.attr('src', getMyCard);
+            sortableEl.append(collectionImg);
+        }
+
+
+
+
             // imageEl.append($("<p>").text("$" + priceTag));
             // cardDisplay.append(imageEl); 
             // put if it doesn't exist first
         }
-
+    
+    });
     // select card
 
     // aTag.on('click', function() {
@@ -83,19 +109,7 @@ function getApi() {
     // });
 
     // add card to local storage
-    addButton.on("click", function() {
-        console.log('Card added to collection.');
-        if (cardIndex = data.data.length) {
-            localStorage.setItem("storedCard", JSON.stringify(data.data[cardIndex].images.small)); 
-        }
-        // get card to collection storage
-        var getMyCard = JSON.parse(localStorage.getItem("storedCard"));
-        var collectionImg = $('<img>');
-        collectionImg.append(getMyCard);
-        sortableEl.append(collectionImg);
-        }); 
         
-    });          
 
 }
 
