@@ -54,7 +54,6 @@ nav {
 
 .middleButtons {
     display: block;
-    
     margin-bottom: 10px;
     width: 95%;
     border: thick solid #43464b;
@@ -76,7 +75,8 @@ nav {
     color: white;
     background-color: #0da148;
     font-size: 1.5em;
-
+    width: 100%;
+    text-align: center;
 }
 
 #tradeSearch {
@@ -84,8 +84,22 @@ nav {
     padding-left: 5px;
     
 }
-
+.dropDownMenu {
+    width: 95%;
+    text-align: center;
+}
 #mySearch {
     padding-bottom: 10px;
     padding-left: 5px;
+}
+
+.options {
+    background-color: lightgray;
+    border: medium solid darkslategray;
+    width: 100%;
+}
+
+.submitButton {
+    background-color: lightgray;
+    border: medium solid darkslategray;
 }
