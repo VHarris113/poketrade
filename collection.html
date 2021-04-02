@@ -8,28 +8,54 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/collection.css" />
   <title>Card Collection Html</title>
+  <header>
+
+    
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="./index.html">PokéTrade.io</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./collection.html">Collection</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./trade.html">Trade</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
 </head>
 
 <body>
   <header>
-    <nav>
+    <nav class="navbar navbar-expand-lg">
       <a class="navbar-brand" href="./index.html">PokéTrade.io</a>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./collection.html">Collection</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./trade.html">Trade</a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -37,46 +63,95 @@
 
   <main>
 
-    <container class="container" id="collectionPage Container">
+    <container class="container" id="collectionPage">
       <!-- holds page content -->
       <h1>Your Collection</h1>
       <div class="row" id="pageRow">
 
         <!-- Card Column -->
-        <div class="col-12 col-md-10 cardsCol" id="cardsColumn">
+       
 
-          <div class="row" id="cardsRow">
-            <ul  id="sortable">
 
+      
+  <section class="grid-container">
+        
+    
+ 
+     <container class="container" id="collectionPageContainer">
+       <!-- holds page content -->
+       <div class="row" id="pageRow">
+ 
+         <!-- Card Column -->
+         <div class="col-12 col-md-10 cardsCol" id="cardsColumn">
+ 
+           <div class="row" id="cardsRow">
+             <ul  id="sortable">
               <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
-                class="img-thumbnail collectionImage img-state-default">
-                <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
-                class="img-thumbnail collectionImage img-state-default">
-                <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
-                class="img-thumbnail collectionImage img-state-default">
-                <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
-                class="img-thumbnail collectionImage img-state-default">
-                <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
-                class="img-thumbnail collectionImage img-state-default">
-                <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
-                class="img-thumbnail collectionImage img-state-default">
-                <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
-                class="img-thumbnail collectionImage img-state-default">
-                <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
-                class="img-thumbnail collectionImage img-state-default">
-                <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
-                class="img-thumbnail collectionImage img-state-default">
-                <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
-                class="img-thumbnail collectionImage img-state-default">
-                <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
-                class="img-thumbnail collectionImage img-state-default">
-                <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
-                class="img-thumbnail collectionImage img-state-default">
-              
+              class="img-thumbnail collectionImage img-state-default">
+              <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
+              class="img-thumbnail collectionImage img-state-default">
+              <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
+              class="img-thumbnail collectionImage img-state-default">
+              <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
+              class="img-thumbnail collectionImage img-state-default">
+              <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
+              class="img-thumbnail collectionImage img-state-default">
+              <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
+              class="img-thumbnail collectionImage img-state-default">
+              <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
+              class="img-thumbnail collectionImage img-state-default">
+              <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
+              class="img-thumbnail collectionImage img-state-default">
+              <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
+              class="img-thumbnail collectionImage img-state-default">
+              <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
+              class="img-thumbnail collectionImage img-state-default">
+              <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
+              class="img-thumbnail collectionImage img-state-default">
+              <img src="assets/images/Picture2.png"  alt="Pokemon placeholder image"
+              class="img-thumbnail collectionImage img-state-default">
+ 
+               
+ 
+ 
+             </ul>
+           </div>
+         </div>
+       
+ 
+ 
+       </div>
+ 
+ 
+       </div>
+ 
+     </container>
+ 
+   </main>
 
+   <aside class="col-12 col-lg-12">
+    <!-- //far right column -->
+    <div id="cardSearchColumn">
 
+      <div class="row">
+        <!-- //search bar -->
+        <div class="input-group" id="searchBar">
+          <input type="search" id="form1" class="form-control"placeholder="search" />
+          <!-- <span class="form-outline">
+          </span> -->
+          <button type="button" class="btn btn-primary searchBtn">
+            Search
+            <!-- <i class="fas fa-search"></i> -->
+          </button>
+        </div>
+      </div>
 
-
+<!--         
+      <div class="row" id="search">
+        <div class="list-group" id="searchList">
+          <button type="button" class="list-group-item list-group-item-action active" aria-current="true"> -->
+          <!-- Cras justo odio
+          </button>
 
             </ul>
           </div>
@@ -112,34 +187,30 @@
 
           </div>
         </div>
+      </div> -->
 
+      <div class="row">
+        <button type="button" class="btn btn-info" id='cardAddButton' type='submit'>Add</button>
 
+        <button type="button" class="btn btn-secondary" id='cardRemoveButton' type='submit'>Remove</button>
 
       </div>
-
-
+   
       </div>
-
-
-
-
-    </container>
-
-  </main>
-
-  <aside>
-    <form class="form-inline my-2 my-lg-0" id="search-section">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search for your card" id="pokemon-search-term" />
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-        Search
-      </button>
-    </form>
-    <div id="card-display"></div>
-    <div>
-      <button>Add</button>
-      <button>Remove</button>
+      <br>
+      <section id="sideScroll">
+          <h2>Informational Section</h2>
+          <ul>
+              <li>Price:</li>
+              <li>Type:</li>
+              <li>Card Type:</li>
+              <li>Description:</li>
+          </ul>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ipsum molestiae perferendis expedita repellat asperiores, hic ab excepturi, accusantium ratione alias modi sapiente blanditiis dolorum mollitia, incidunt dolore voluptas nesciunt? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores omnis sapiente maiores voluptates. Asperiores, maiores dignissimos, culpa voluptas debitis accusantium quod quas similique magni adipisci excepturi, incidunt necessitatibus consectetur perspiciatis.</p>
+      </section>
     </div>
-  </aside>
+</aside>
+
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
