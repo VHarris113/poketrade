@@ -2,23 +2,70 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-
-main {
-    justify-content: flex-end;
-}
-
 nav {
+    position: fixed;
     background-color: #43464b;
     color: #f0f1f3;
 }
+
 
 body {
     background-color: #0961d3;
     color: #f0f1f3;
 }
 
+aside {
+    position: fixed;
+    right: -1000px;
+}
+
 .navbar-brand {
     color: #f0f1f3
+}
+
+.grid-container {
+    display:grid;
+    grid-template-areas: 
+        'main main main main aside aside'
+        'main main main main aside aside'
+        'main main main main aside aside';
+    grid-gap: 25px;
+    background-color: #0961d3;
+    padding: 10px;
+}
+
+#searchBar {
+    padding: 10px;
+    background-color: #43464b;
+    width: 500px;
+}
+
+
+#sideScroll {
+    box-sizing: border-box;
+    width: 350px;
+    height: 500pt;
+    background-color: #43464b;
+    padding: 10px;
+}
+
+#cardsColumn {
+    display: flex;
+    justify-content: space-around;
+    align-items: space-around;
+
+}
+
+#form1 {
+    margin-right: 20px;
+    float:right;
+
+}
+
+.searchBtn {
+    margin-left: 1px;
+    background-color: #f5b342;
+
 }
 
 h1 {
@@ -29,15 +76,13 @@ div {
     color: red;
 }
 
-aside {
-    float:right;
-}
 
 .container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     float: left;
+    position: fixed;
     height: 400px;
     margin-top: 10px;
     margin-left: 20px;
@@ -45,12 +90,13 @@ aside {
     background-color: #43464b;
 }
 
-#cardsColumn {
+/* #cardsColumn {
     display: flex;
     justify-content: space-around;
     align-items: space-around;
 
-}
+} */
+
 
 .collectionImage {
     width: 170px;
@@ -66,12 +112,6 @@ aside {
     margin: 20px;
     width: 1000px;
 
-}
-
-.searchBtn {
-    background-color: #f5b342;
-    width: 30px;
-    height: 30px;
 }
 
 .list-group-item.active {
@@ -103,5 +143,3 @@ align-items: space around;} */
 
 #sortable li { margin: 15px 15px 15px 15px; padding: 5px; float: left; width: 150px; height: 130px; font-size: 4em; text-align: center; 
 } */
-
-
