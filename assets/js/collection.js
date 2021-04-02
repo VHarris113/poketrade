@@ -6,7 +6,6 @@ var imageCollectionBox = $("#sortable");
 var addButton = $("#cardAddButton");
 var removeButton = $("#cardRemoveButton");
 
-var sortableEl = $('#sortable');
 var cardIndex = [];
 
 $( function() {

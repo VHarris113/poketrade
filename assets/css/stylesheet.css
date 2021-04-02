@@ -23,9 +23,6 @@ body {
     margin-right: 10px;
 }
 
-.navbar-brand {
-    color: #f0f1f3
-}
 
 h1 {
     text-align: center;
@@ -56,6 +53,31 @@ ul {
     margin-bottom: 2rem;
 }
 
+.navbar-brand {
+    color: #f0f1f3
+}
+
+.btn2 {
+    color: #010203;
+    box-sizing: content-box;
+    padding: 20pt;
+    background-color: #a6d9db;
+    border-color: #07080a;
+    align-content: center;
+}
+
+.btn2:hover {
+    background-color: #e61818;
+}
+
+.btn2:active {
+    background-color: #f17f7f;
+}
+
+.cardlist {
+    list-style: none;
+    justify-content: space-around;
+}
 #info {
     box-sizing: content-box;
     width: 20%;
@@ -131,26 +153,4 @@ ul {
     padding: 0px;
     box-sizing: content-box;
     width: 50%;
-}
-
-.btn2 {
-    color: #010203;
-    box-sizing: content-box;
-    padding: 20pt;
-    background-color: #a6d9db;
-    border-color: #07080a;
-    align-content: center;
-}
-
-.btn2:hover {
-    background-color: #e61818;
-}
-
-.btn2:active {
-    background-color: #f17f7f;
-}
-
-.cardlist {
-    list-style: none;
-    justify-content: space-around;
 }
