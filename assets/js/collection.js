@@ -6,6 +6,7 @@ var imageCollectionBox = $("#sortable");
 var addButton = $("#cardAddButton");
 var removeButton = $("#cardRemoveButton");
 
+var sortableEl = $('#sortable');
 var cardIndex = [];
 
 $( function() {
@@ -37,11 +38,12 @@ function getApi() {
                 var aTag = $("<a>");
                 var imageEl = $("<img>");
                 var priceEl = $("<p>")
+                var pageBreak = $("<hr size='3' />")
                 priceEl.text("$" + priceTag + " - " + i);
                 imageEl.attr("src", imgUrl);
                 imageEl.attr("data-index", i);
                 aTag.append(imageEl, priceEl);
-                cardDisplay.append(aTag);
+                cardDisplay.append(aTag, pageBreak);
             } else if (data.data[i].tcgplayer && data.data[i]?.tcgplayer.prices.holofoil){
                 var imgUrl = data.data[i].images.small;
                 var priceTag = data.data[i].tcgplayer.prices.holofoil.mid;
@@ -49,11 +51,12 @@ function getApi() {
                 var aTag = $("<a>");
                 var imageEl = $("<img>");
                 var priceEl = $("<p>")
+                var pageBreak = $("<hr size='3' />")
                 priceEl.text("$" + priceTag + " - " + i);
                 imageEl.attr("src", imgUrl);
                 imageEl.attr("data-index", i);
                 aTag.append(imageEl, priceEl);
-                cardDisplay.append(aTag);
+                cardDisplay.append(aTag, pageBreak);
             } else if (!data.data[i].tcgplayer) {
                 // console.log("next");
                 var imgUrl = data.data[i].images.small;
@@ -62,11 +65,12 @@ function getApi() {
                 var aTag = $("<a>");
                 var imageEl = $("<img>");
                 var priceEl = $("<p>")
+                var pageBreak = $("<hr size='3' />")
                 priceEl.text("$0.00" + " - " + i);
                 imageEl.attr("src", imgUrl);
                 imageEl.attr("data-index", i);
                 aTag.append(imageEl, priceEl);
-                cardDisplay.append(aTag);
+                cardDisplay.append(aTag, pageBreak);
             }
 
         imageEl.on('click', function () {
