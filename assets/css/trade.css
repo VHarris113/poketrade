@@ -34,6 +34,7 @@ nav {
     box-sizing: content-box;
    
     width: 90%;
+    background-color: #43464b;
     
 }
 
@@ -56,9 +57,7 @@ nav {
     margin-bottom: 10px;
 }
 
-.background {
-    background-color: #43464b;;
-}
+
 
 #mySearch {
     padding-bottom: 10px;
