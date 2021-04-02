@@ -2,6 +2,7 @@ var tradeButton = $('#tradeBtn');
 
 function init() {
     getApiInfo();
+    // mathCalc();
 }
 
 // randomization of homepage cards
@@ -26,5 +27,18 @@ function getApiInfo() {
 tradeButton.on("click", function() {
     window.location.replace('./trade.html');
 })
+
+// var num1 = 10;
+// var num2 = 10;
+
+// function mathCalc(){
+//     if (num1 / num2 > 10) {
+//         console.log("bad")
+//     } else if (num1 / num2 < 10) {
+//         console.log("good")
+//     } else {
+//         console.log("fair")
+//     }
+// }
 
 init();
