@@ -2,23 +2,24 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-
-main {
-    justify-content: flex-end;
-    margin: 30px;
-}
-
 nav {
+    position: fixed;
     background-color: #43464b;
     color: #f0f1f3;
     background-color: gray;
 }
+
 
 body {
     background-color: #0961d3;
     background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
     
     color: #f0f1f3;
+}
+
+aside {
+    position: fixed;
+    right: -1000px;
 }
 
 .navbar-brand {
@@ -43,7 +44,8 @@ h1 {
     justify-content: space-around;
     align-items: space-around;
 
-}
+} */
+
 
 .collectionImage {
     width: 165px;
@@ -60,12 +62,6 @@ h1 {
     margin: 20px;
     width: 80%;
 
-}
-
-.searchBtn {
-    background-color: #f5b342;
-    width: 30px;
-    height: 30px;
 }
 
 .list-group-item.active {

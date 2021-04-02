@@ -135,7 +135,6 @@ text {
 }
 
 .cardlist {
-    display: flex;
-    list-style:none;
+    list-style: none;
     justify-content: space-around;
 }
