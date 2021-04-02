@@ -6,7 +6,6 @@ var imageCollectionBox = $("#sortable");
 var addButton = $("#cardAddButton");
 var removeButton = $("#cardRemoveButton");
 
-var sortableEl = $('#sortable');
 var cardIndex = [];
 
 $( function() {
@@ -71,23 +70,18 @@ function getApi() {
     // select card
     aTag.on('click', function() {
         cardIndex === data.data.length;
-        console.log(cardIndex);
     });
     // add card to local storage
     addButton.on("click", function() {
         console.log('Card added to collection.');
-        if (cardIndex === data.data.length) {
-            localStorage.setItem("storedCard", JSON.stringify(data.data[cardIndex].images.small)); 
-        }
-        // get card to collection storage
-        var getMyCard = JSON.parse(localStorage.getItem("storedCard"));
-        var collectionImg = $('<img>');
-        collectionImg.append(getMyCard);
-        sortableEl.append(collectionImg);
-        }); 
-        
-    });          
-
+        button.on('click', function(event) {
+            event.preventDefault();
+            if (cardIndex === data.data.length) {
+                localStorage.setItem("storedCard", JSON.stringify(data.data[0].images.small)); 
+            }
+        });      
+    });
+    });
 }
 
 // getApi();
