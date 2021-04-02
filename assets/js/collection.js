@@ -9,6 +9,8 @@ var removeButton = $("#cardRemoveButton");
 var sortableEl = $('#sortable');
 var cardIndex = [];
 
+var dataIndex = [];
+
 $( function() {
     $( "#sortable" ).sortable();
     $( "#sortable" ).disableSelection();
@@ -76,11 +78,13 @@ function getApi() {
         imageEl.on('click', function () {
             cardIndex = $(this).attr("data-index");
             console.log(cardIndex);
-            
+
             addButton.on("click", function() {
+                dataIndex = cardIndex;
+                console.log(dataIndex);
                 console.log('Card added to collection.');
                 if (cardIndex = data.data.length) {
-                    localStorage.setItem("storedCard", JSON.stringify(data.data[0].images.small)); 
+                    localStorage.setItem("storedCard", JSON.stringify(data.data[dataIndex].images.small)); 
                 }
                 // get card to collection storage
                 addToCollection();
