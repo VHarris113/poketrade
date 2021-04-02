@@ -1,5 +1,6 @@
 * {
     font-family: Georgia, 'Times New Roman', Times, serif;
+    width: -moz-fit-content;
 }
 
 
@@ -11,7 +12,7 @@ nav {
     background-color: #43464b;
     color: #f0f1f3;
     margin-top: 10px;
-    margin-right: 10px;
+    margin-right: -17px;
     margin-left: 10px;
 }
 
@@ -20,7 +21,7 @@ body {
     color: #f0f1f3;
     background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
     margin: -10px;
-    margin-right: 10px;
+    margin-right: -17px;
 }
 
 
