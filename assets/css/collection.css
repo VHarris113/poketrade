@@ -2,11 +2,9 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-nav {
-    position: fixed;
+nav { 
     background-color: #43464b;
     color: #f0f1f3;
-    background-color: gray;
 }
 
 
@@ -15,23 +13,8 @@ body {
     background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
     
     color: #f0f1f3;
-}
-
-aside {
-    position: fixed;
-    right: -1000px;
-}
-
-.navbar-brand {
-    color: #f0f1f3
-    
-
-    
-}
-
-#collectionPage {
-    margin: 50px;
-    font-family: 'Bebas Neue', cursive;
+    margin-left: 185px;
+    margin-right: -185px;
 }
 
 h1 {
@@ -39,10 +22,34 @@ h1 {
     font-weight: bold;
     letter-spacing: 2px;
 }
+
+.navbar-brand {
+    color: #f0f1f3;
+      
+}
+#searchColumn {
+    padding-right: 30px;
+}
+
+
+
+#collectionPage {
+    margin: 50px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.pageContainer {
+    /* background-color: #43464b; */
+    background-color: #5b6770;
+    padding: 40px;
+    
+}
+
 #cardsColumn {
     display: flex;
     justify-content: space-around;
     align-items: space-around;
+    padding-right: 30px;
 
 } 
 
@@ -71,7 +78,7 @@ h1 {
 #sortable { width: 100%; list-style-type: none; margin: 0; padding: 0;  }
   #sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 100px; height: 90px; font-size: 4em; text-align: center; }
 
-ul {
+#sortable {
     width: 100%;
     flex-wrap: wrap;
     display: flex;
@@ -89,10 +96,7 @@ ul {
 } 
 
 
-/* main {
-    justify-content: flex-end;
-    margin: 30px;
-} */
+
 /* .container {
     display: flex;
     flex-direction: row;

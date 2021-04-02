@@ -36,7 +36,7 @@
           <a class="nav-link" href="./trade.html">Trade</a>
       </ul>
     </div>
-
+    </nav>
 
 </header>
 
@@ -51,9 +51,9 @@
       <div class="row" id="pageRow">
 
                       <!-- Card Column -->
-              <div class="col-12 col-md-10 cardsCol" id="cardsColumn">
+              <div class="col-12 col-md-10 cardsCol " id="cardsColumn">
 
-                <div class="row" id="cardsRow">
+                <div class="row pageContainer" id="cardsRow">
                   <ul id="sortable">
                     <img src="assets/images/Picture2.png" alt="Pokemon placeholder image"
                       class="img-thumbnail collectionImage img-state-default">
@@ -84,29 +84,29 @@
                   </ul>
                 </div>
               </div>
-
+              <aside class="col-12 col-md-2" id="searchColumn">
+                <form class="form-inline my-2 my-lg-0" id="search-section">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search for your card"
+                    id="pokemon-search-term" />
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                    Search
+                  </button>
+                </form>
+                <div id="card-display"></div>
+                <div class="row">
+                  <button type="button" class="btn btn-info" id='cardAddButton'>Add</button>
+                  <button type="button" class="btn btn-secondary" id='cardRemoveButton'>remove</button>
+        
+                </div>
+                <!-- <div>
+                  <button>Add</button>
+                  <button>Remove</button>
+                </div> -->
+        
+              </aside>
 
             </div>
-            <aside class="col-12 col-md-2">
-              <form class="form-inline my-2 my-lg-0" id="search-section">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search for your card"
-                  id="pokemon-search-term" />
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                  Search
-                </button>
-              </form>
-              <div id="card-display"></div>
-              <div class="row">
-                <button type="button" class="btn btn-info" id='cardAddButton'>Add</button>
-                <button type="button" class="btn btn-secondary" id='cardRemoveButton'>remove</button>
-      
-              </div>
-              <!-- <div>
-                <button>Add</button>
-                <button>Remove</button>
-              </div> -->
-      
-            </aside>
+            
           </container>
         </main>
   
