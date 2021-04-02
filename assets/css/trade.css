@@ -8,7 +8,7 @@ body {
 nav {
     background-color: #43464b;
     color: #f0f1f3;
-    background-color: gray;
+    
 }
 
 .navbar-brand {
@@ -17,20 +17,24 @@ nav {
 
 .row {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     float:left;
     margin-top: 10px;
     margin-left: 50px;
+    margin-right: 50px;
     box-sizing: content-box;
-    background-color: #43464b;
+    
 }
 
 .container {
+    display: flex;
     height: 500px;
-    width: 460px;
+    padding: 20px;
     box-sizing: content-box;
-    background-color: #43464b;
+   
+    width: 90%;
+    
 }
 
 #tradeContainer {
@@ -38,10 +42,24 @@ nav {
 }
 
 #matchSelection {
-    max-width: 10%;
+    
+    text-align: center;
+    
 }
 
 #matchText {
     color: white;
     padding: 15px;
+}
+
+#matchBtn {
+    margin-bottom: 10px;
+}
+
+.background {
+    background-color: #43464b;;
+}
+
+#mySearch {
+    padding-bottom: 10px;
 }
