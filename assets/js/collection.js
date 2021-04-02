@@ -71,6 +71,7 @@ function getApi() {
     // select card
     aTag.on('click', function() {
         cardIndex === data.data.length;
+        console.log(cardIndex);
     });
     // add card to local storage
     addButton.on("click", function() {
