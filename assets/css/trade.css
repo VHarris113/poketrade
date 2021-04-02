@@ -23,20 +23,20 @@ nav {
     margin-top: 10px;
     margin-left: 40px;
     margin-right: 50px;
-    box-sizing: content-box;
+    width: 100%;
     padding: 14px;
     
 }
 
 .container {
     display: flex;
-    height: 75vh;
+    height: 85vh;
     padding: 20px;
-    box-sizing: content-box;
-   
-    width: 90%;
-    background-color:#5b6770;
+    /* box-sizing: content-box; */
+    margin-left: 0px;
     border-radius: 5px;
+    background-color: #43464b;
+    border: thick solid #43464b;
     
 }
 
@@ -45,23 +45,44 @@ nav {
 }
 
 #matchSelection {
-    
-    text-align: center;
-    
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+     
+} 
 
-#matchText {
+.middleButtons {
+    display: block;
+    
+    margin-bottom: 10px;
+    width: 95%;
+    border: thick solid #43464b;
     color: white;
-    padding: 15px;
+    font-size: 1.5em;
 }
 
 #matchBtn {
     margin-bottom: 10px;
+    border: thick solid #43464b;
+    color: white;
+    background-color: #f54905;
+    font-size: 1.5em;
+}
+
+.currencyBtn {
+    margin-bottom: 10px;
+    border: thick solid #43464b;
+    color: white;
+    background-color: #0da148;
+    font-size: 1.5em;
+
 }
 
 #tradeSearch {
     padding-bottom: 10px;
     padding-left: 5px;
+    
 }
 
 #mySearch {

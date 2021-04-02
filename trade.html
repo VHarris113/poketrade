@@ -33,7 +33,7 @@
     </header>
 
     <main>
-        <div id='tradeContainer'></div>
+        <div id='tradeContainer' >
         <div class="row tradeContentRow">    
             <div class='col-md-4' id='tradeMyCards'>
                 <form id='mySearch'>
@@ -46,7 +46,7 @@
                     >
                     <button id='collectionSearchBtn' type='submit'>(s)</button>
                 </form>
-                <div class='container background'>
+                <div class='container'>
                     <div class='card '>
                         <!-- Create this element in JQuery getting api img and appending to <p> -->
                         <div id='img-holder'>
@@ -57,8 +57,17 @@
                 </div>
             </div>
             <div class="col-md-2" id='matchSelection'>
-                <button id='matchBtn'>Match</button>
-                <div id='matchText' class='background'><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad velit voluptas voluptatibus doloribus, natus architecto obcaecati earum hic deleniti quam!</p></div>
+                <button id='matchBtn' class="middleButtons">Match</button>
+               <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle middleButtons currencyButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Currency
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
             </div>
             <div id='tradeNewCards' class='col-md-4'>                
                 <form id='tradeSearch'>
@@ -81,8 +90,9 @@
                 </div>
             </div>
             <div id="searchResults" class="col-md-2">
-                
+                Search results will go here
             </div>
+        </div>
         </div>
     </div>
     </main>
