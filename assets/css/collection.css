@@ -95,7 +95,10 @@ h1 {
     padding: 20px;
 } 
 
-
+#cardSelector {
+    height:200px;
+    background-color: red;
+}
 
 /* .container {
     display: flex;
