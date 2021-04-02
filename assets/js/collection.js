@@ -33,23 +33,25 @@ function getApi() {
             if (data.data[i].tcgplayer && data.data[i].tcgplayer.prices.normal) {
                 var imgUrl = data.data[i].images.small;
                 var priceTag = data.data[i].tcgplayer.prices.normal.mid;
-                console.log(priceTag);
+                // console.log(priceTag);
+                var aTag = $("<a>");
                 var imageEl = $("<img>");
                 var priceEl = $("<p>")
                 priceEl.text("$" + priceTag + " - " + i);
                 imageEl.attr("src", imgUrl);
-                priceEl.append(imageEl);
-                cardDisplay.append(priceEl);
+                aTag.append(imageEl, priceEl);
+                cardDisplay.append(aTag);
             } else if (data.data[i].tcgplayer && data.data[i]?.tcgplayer.prices.holofoil){
                 var imgUrl = data.data[i].images.small;
                 var priceTag = data.data[i].tcgplayer.prices.holofoil.mid;
                 // console.log(priceTag);
+                var aTag = $("<a>");
                 var imageEl = $("<img>");
                 var priceEl = $("<p>")
                 priceEl.text("$" + priceTag + " - " + i);
                 imageEl.attr("src", imgUrl);
-                priceEl.append(imageEl);
-                cardDisplay.append(priceEl);
+                aTag.append(imageEl, priceEl);
+                cardDisplay.append(aTag);
             } else if (!data.data[i].tcgplayer) {
                 // console.log("next");
                 var imgUrl = data.data[i].images.small;
@@ -63,25 +65,38 @@ function getApi() {
                 aTag.append(imageEl, priceEl);
                 cardDisplay.append(aTag);
             }
+
+        imageEl.on('click', function () {
+            cardIndex = data.data.indexOf();
+            console.log(cardIndex);
+        });  
             // imageEl.append($("<p>").text("$" + priceTag));
             // cardDisplay.append(imageEl); 
             // put if it doesn't exist first
         }
+
     // select card
-    aTag.on('click', function() {
-        cardIndex === data.data.length;
-    });
+
+    // aTag.on('click', function() {
+    //     cardIndex === data.data.length;
+    //     console.log(cardIndex);
+    // });
+
     // add card to local storage
     addButton.on("click", function() {
         console.log('Card added to collection.');
-        button.on('click', function(event) {
-            event.preventDefault();
-            if (cardIndex === data.data.length) {
-                localStorage.setItem("storedCard", JSON.stringify(data.data[0].images.small)); 
-            }
-        });      
-    });
-    });
+        if (cardIndex = data.data.length) {
+            localStorage.setItem("storedCard", JSON.stringify(data.data[cardIndex].images.small)); 
+        }
+        // get card to collection storage
+        var getMyCard = JSON.parse(localStorage.getItem("storedCard"));
+        var collectionImg = $('<img>');
+        collectionImg.append(getMyCard);
+        sortableEl.append(collectionImg);
+        }); 
+        
+    });          
+
 }
 
 // getApi();
