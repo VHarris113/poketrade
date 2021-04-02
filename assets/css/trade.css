@@ -21,20 +21,22 @@ nav {
     justify-content: center;
     float:left;
     margin-top: 10px;
-    margin-left: 50px;
+    margin-left: 40px;
     margin-right: 50px;
     box-sizing: content-box;
+    padding: 14px;
     
 }
 
 .container {
     display: flex;
-    height: 500px;
+    height: 75vh;
     padding: 20px;
     box-sizing: content-box;
    
     width: 90%;
-    background-color: #43464b;
+    background-color:#5b6770;
+    border-radius: 5px;
     
 }
 
@@ -57,8 +59,12 @@ nav {
     margin-bottom: 10px;
 }
 
-
+#tradeSearch {
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
 
 #mySearch {
     padding-bottom: 10px;
+    padding-left: 5px;
 }
