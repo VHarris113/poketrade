@@ -14,6 +14,17 @@ var button = $('#matchBtn');
 // var getCardHistory =  || [];
 
 
+function convertCurrency() {
+    var currencyUrl = "'https://api.fastforex.io/fetch-one?from=usd&to=eur&api_key=154fe46305-15630ffeea-qqz1pl";
+
+    fetch(curencyUrl)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+})};
+
 
 //uncomment to test
 //echo convertCurrency(10, 'USD', 'PHP');
