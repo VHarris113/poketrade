@@ -132,20 +132,20 @@ searchForm.on("submit", function (event) {
   getApi();
 });
 
-$(document).ready(function() {
-    searchButton.on("click", function (event) {
-  event.preventDefault();
-  console.log("the button is working");
-    // cardDisplay.empty();
-    // console.log(pokemonSearchInput.val());
-    // if (!s) {
-    //   alert("You must enter the name of a Pokemon card.");
-    //   return;
-    // }
-    // getApi();
-})
+// $(document).ready(function() {
+//     searchButton.on("click", function (event) {
+//   event.preventDefault();
+//   console.log("the button is working");
+//     // cardDisplay.empty();
+//     // console.log(pokemonSearchInput.val());
+//     // if (!s) {
+//     //   alert("You must enter the name of a Pokemon card.");
+//     //   return;
+//     // }
+//     // getApi();
+// })
 
-})
+// })
 
 // addButton.on("click", function() {
 //     console.log('Card added to collection.');
