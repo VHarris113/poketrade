@@ -12,6 +12,12 @@ var cardIndex = [];
 
 var calledIndex = [];
 
+var storedCard;
+
+var requestUrl = '';
+
+var cardNormal = false;
+
 $( function() {
     $( "#sortable" ).sortable();
     $( "#sortable" ).disableSelection();
@@ -22,9 +28,9 @@ function getStorage() {
 };
 
 
-
+// localstorage only pulling from first getApi()
 function getApi() {
-    var requestUrl = "https://api.pokemontcg.io/v2/cards?q=name:" + pokemonSearchInput.val() + "&orderBy=name";
+    requestUrl = "https://api.pokemontcg.io/v2/cards?q=name:" + pokemonSearchInput.val() + "&orderBy=name";
     // var i = 0
     fetch(requestUrl).then(function (response){
         return response.json();
@@ -39,12 +45,13 @@ function getApi() {
                 var priceTag = data.data[i].tcgplayer.prices.normal.mid;
                 var cardId = data.data[i].id;
                 // console.log(priceTag);
+                cardNormal = true;
                 var aTag = $("<a>");
                 var imageEl = $("<img>")
                 imageEl.addClass("hover-shadow");
                 var priceEl = $("<p>")
                 var pageBreak = $("<hr size='3' />")
-                priceEl.text("~ $" + priceTag);
+                priceEl.text("$" + priceTag + " - " + i);
                 imageEl.attr("src", imgUrl);
                 imageEl.attr("data-index", i);
                 imageEl.attr("data-price", priceTag);
@@ -62,7 +69,7 @@ function getApi() {
                 imageEl.addClass("over-shadow");
                 var priceEl = $("<p>")
                 var pageBreak = $("<hr size='3' />")
-                priceEl.text("~ $" + priceTag);
+                priceEl.text("$" + priceTag + " - " + i);
                 imageEl.attr("src", imgUrl);
                 imageEl.attr("data-index", i);
                 imageEl.attr("data-price", priceTag);
@@ -81,7 +88,7 @@ function getApi() {
                 imageEl.addClass("hover-shadow");
                 var priceEl = $("<p>")
                 var pageBreak = $("<hr size='3' />")
-                priceEl.text("~ $0.00");
+                priceEl.text("$0.00" + " - " + i);
                 imageEl.attr("src", imgUrl);
                 imageEl.attr("data-index", i);
                 imageEl.attr("data-price", priceTag);
@@ -91,46 +98,48 @@ function getApi() {
                 cardDisplay.append(aTag, pageBreak);
             }
 
-        imageEl.on('click', function (event) {
-            var chosenCard = event.target
-
-            if (chosenCard.matches("img")){
+ 
+            imageEl.on('click', function (event) {
+                var chosenCard = event.target
                 cardIndex = $(this).attr("data-index");
-                cardImg = $(this).attr("data-img");
-                cardPrice = $(this).attr("data-price");
-                cardId = $(this).attr("data-id");
-                console.log(cardIndex);
-                console.log(cardImg);
-                console.log(cardPrice);
-                console.log(cardId);
-            }
-
-            addButton.on("click", function() {
-                calledIndex = cardIndex;
                 
-                console.log('Card added to collection.');
-                if (cardIndex = data.data.length) {
-                    localStorage.setItem("storedCard", JSON.stringify(data.data[calledIndex].images.small)); 
+                if (chosenCard.matches("img")){
+                    
+                    cardImg = $(this).attr("data-img");
+                    cardPrice = $(this).attr("data-price");
+                    cardId = $(this).attr("data-id");
+                    console.log(cardIndex);
+                    console.log(cardImg);
+                    console.log(cardPrice);
+                    console.log(cardId);
+                
+                    addButton.on("click", function() {
+                        // calledIndex = cardIndex;
+                        console.log(requestUrl);
+                        console.log('Card added to collection.');
+                        // if (cardIndex = data.data.length) {
+                                // storedCard = JSON.parse(localStorage.getItem("storedCard"));
+                                var storedItem = {
+                                    image: cardImg,
+                                    price: cardPrice,
+                                    id: cardId,
+                                    index: cardIndex
+                                }
+                                // storedCard.push(storedItem);
+                                localStorage.setItem("storedCard", JSON.stringify(storedItem)); 
+                            
+                            
+                        // }
+                        // get card to collection storage
+                        // addToCollection();
+                    }); 
+                
                 }
-                // get card to collection storage
-                addToCollection();
+
+
+
+            
             }); 
-        
-
-        
-        });  
-        
-
-
-        function addToCollection() {
-            var getMyCard = JSON.parse(localStorage.getItem("storedCard"));
-            var collectionImg = $('<img>');
-            collectionImg.attr('src', getMyCard);
-            sortableEl.append(collectionImg);
-            indexReset();
-        }
-
-
 
             // imageEl.append($("<p>").text("$" + priceTag));
             // cardDisplay.append(imageEl); 
@@ -138,6 +147,25 @@ function getApi() {
         }
     
     });
+ 
+    function addToCollection() {
+        var getMyCard = JSON.parse(localStorage.getItem("storedCard"));
+        
+        var collectionImg = $('<img>');
+        var collectionPrice = $('<p>');
+        collectionImg.attr('src', getMyCard);
+        collectionPrice.attr('src', getMyCard)
+        sortableEl.append(collectionImg, collectionPrice);
+        indexReset();
+    }
+
+    function indexReset() {
+        savedCards = [];
+        cardIndex = [];
+        calledIndex = [];
+        requestUrl = '';
+    }
+
     // select card
 
     // aTag.on('click', function() {
@@ -164,11 +192,7 @@ function getApi() {
 
 }
 
-function indexReset() {
-    savedCards = [];
-    cardIndex = [];
-    calledIndex = [];
-}
+
 // getApi();
 searchForm.on("submit", function(event) {
     event.preventDefault();
