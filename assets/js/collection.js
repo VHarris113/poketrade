@@ -7,6 +7,7 @@ var addButton = $("#cardAddButton");
 var removeButton = $("#cardRemoveButton");
 
 var sortableEl = $('#sortable');
+var savedCards = [];
 var cardIndex = [];
 
 var calledIndex = [];
@@ -36,6 +37,7 @@ function getApi() {
             if (data.data[i].tcgplayer && data.data[i].tcgplayer.prices.normal) {
                 var imgUrl = data.data[i].images.small;
                 var priceTag = data.data[i].tcgplayer.prices.normal.mid;
+                var cardId = data.data[i].id;
                 // console.log(priceTag);
                 var aTag = $("<a>");
                 var imageEl = $("<img>")
@@ -45,11 +47,15 @@ function getApi() {
                 priceEl.text("$" + priceTag + " - " + i);
                 imageEl.attr("src", imgUrl);
                 imageEl.attr("data-index", i);
+                imageEl.attr("data-price", priceTag);
+                imageEl.attr("data-id", cardId);
+                imageEl.attr("data-img", imgUrl);
                 aTag.append(imageEl, priceEl);
                 cardDisplay.append(aTag, pageBreak);
             } else if (data.data[i].tcgplayer && data.data[i]?.tcgplayer.prices.holofoil){
                 var imgUrl = data.data[i].images.small;
                 var priceTag = data.data[i].tcgplayer.prices.holofoil.mid;
+                var cardId = data.data[i].id;
                 // console.log(priceTag);
                 var aTag = $("<a>");
                 var imageEl = $("<img>");
@@ -59,11 +65,15 @@ function getApi() {
                 priceEl.text("$" + priceTag + " - " + i);
                 imageEl.attr("src", imgUrl);
                 imageEl.attr("data-index", i);
+                imageEl.attr("data-price", priceTag);
+                imageEl.attr("data-id", cardId);
+                imageEl.attr("data-img", imgUrl);
                 aTag.append(imageEl, priceEl);
                 cardDisplay.append(aTag, pageBreak);
             } else if (!data.data[i].tcgplayer) {
                 // console.log("next");
                 var imgUrl = data.data[i].images.small;
+                var cardId = data.data[i].id;
                 // var priceTag = data.data[i].tcgplayer.prices.holofoil.mid;
                 // console.log(priceTag);
                 var aTag = $("<a>");
@@ -74,17 +84,30 @@ function getApi() {
                 priceEl.text("$0.00" + " - " + i);
                 imageEl.attr("src", imgUrl);
                 imageEl.attr("data-index", i);
+                imageEl.attr("data-price", priceTag);
+                imageEl.attr("data-id", cardId);
+                imageEl.attr("data-img", imgUrl);
                 aTag.append(imageEl, priceEl);
                 cardDisplay.append(aTag, pageBreak);
             }
 
-        imageEl.on('click', function () {
-            cardIndex = $(this).attr("data-index");
-            console.log(cardIndex);
+        imageEl.on('click', function (event) {
+            var chosenCard = event.target
+
+            if (chosenCard.matches("img")){
+                cardIndex = $(this).attr("data-index");
+                cardImg = $(this).attr("data-img");
+                cardPrice = $(this).attr("data-price");
+                cardId = $(this).attr("data-id");
+                console.log(cardIndex);
+                console.log(cardImg);
+                console.log(cardPrice);
+                console.log(cardId);
+            }
 
             addButton.on("click", function() {
                 calledIndex = cardIndex;
-                console.log(calledIndex);
+                
                 console.log('Card added to collection.');
                 if (cardIndex = data.data.length) {
                     localStorage.setItem("storedCard", JSON.stringify(data.data[calledIndex].images.small)); 
@@ -93,16 +116,19 @@ function getApi() {
                 addToCollection();
             }); 
         
+
+        
         });  
         
+
 
         function addToCollection() {
             var getMyCard = JSON.parse(localStorage.getItem("storedCard"));
             var collectionImg = $('<img>');
             collectionImg.attr('src', getMyCard);
             sortableEl.append(collectionImg);
+            indexReset();
         }
-
 
 
 
@@ -138,6 +164,11 @@ function getApi() {
 
 }
 
+function indexReset() {
+    savedCards = [];
+    cardIndex = [];
+    calledIndex = [];
+}
 // getApi();
 searchForm.on("submit", function(event) {
     event.preventDefault();
