@@ -16,7 +16,7 @@ var matchBut = $("#matchBtn");
 var currencySelection = $("#currency");
 var cardValueUSEl = $("#cardValueUS");
 var cardVal = cardValueUSEl.text();
-console.log(cardVal);
+//array of currencies
 var currencies = [
   "AED",
   "AFN",
@@ -186,21 +186,7 @@ var currencies = [
   "ZWL",
 ];
 
-function addCurrencies() {
-  for (i = 0; i < currencies.length; i++) {
-    var code = currencies[i];
-    var currencyItem = $(`<option value=${code}>`);
-    var currencyItemText = currencyItem.text(`${code}`);
-    $("#currency").append(currencyItemText);
-  }
-}
-addCurrencies();
-
-
-
-// var countryCode = "EUR";
-
-
+//converts currency with x=country code & y=truncated card value
 function currencyConvert(x, y) {
   var currencyUrl = `https://free.currconv.com/api/v7/convert?q=USD_${x}&compact=ultra&apiKey=53972c8322e6040cface`;
 
@@ -209,12 +195,19 @@ function currencyConvert(x, y) {
       return response.json();
     })
     .then(function (data) {
-      var lookup = `data.USD_${x}`;
+      var lookup = `USD_${x}`;
       console.log(lookup);
-    var exchangeRate = lookup;
+      console.log(`data.${lookup}`);
+      
+      
+     
+      
+      var yNum = parseInt(y, 10);
+      
+      var exchangeRate = lookup;
       console.log(exchangeRate);
       console.log(typeof exchangeRate);
-      var newValue = y * exchangeRate;
+      var newValue = yNum * exchangeRate;
       var newValue1 = newValue.toFixed(2);
       console.log(newValue1);
       convertedPriceEl.text("Converted Price = " + newValue1);
@@ -223,14 +216,26 @@ function currencyConvert(x, y) {
 
 matchBut.on("click", function (event) {
     event.preventDefault;
-    console.log("the button is working");
     var countryCode = currencySelection.val();
-    console.log(countryCode);
-    console.log(cardVal);
+    //cuts price to 2 digits past dollar
     var cardValUs = cardVal.substring(1);
-    console.log(cardValUs);
     currencyConvert(countryCode, cardValUs);
 });
+
+//function to add the list of currencies to the drop-down menu
+function addCurrencies() {
+  for (i = 0; i < currencies.length; i++) {
+    var code = currencies[i];
+    var currencyItem = $(`<option value=${code}>`);
+    var currencyItemText = currencyItem.text(`${code}`);
+    $("#currency").append(currencyItemText);
+  }
+}
+//calls function to add currency list
+addCurrencies();
+// var countryCode = "EUR";
+
+
 
 //uncomment to test
 //echo convertCurrency(10, 'USD', 'PHP');
