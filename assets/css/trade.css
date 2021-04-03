@@ -116,12 +116,3 @@ nav {
     overflow:auto;
 }
 
-#searchResults {
-    border: solid #5b6770;
-    background-color: #5b6770;
-    font: 20px;
-    font-weight: bold;
-    width: 500px;
-    height: 750px;
-    overflow: auto;
-}
