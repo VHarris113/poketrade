@@ -44,6 +44,7 @@ function getApi() {
                 var imgUrl = data.data[i].images.small;
                 var priceTag = data.data[i].tcgplayer.prices.normal.mid;
                 var cardId = data.data[i].id;
+                var cardName = data.data[i].name;
                 // console.log(priceTag);
                 cardNormal = true;
                 var aTag = $("<a>");
@@ -54,6 +55,7 @@ function getApi() {
                 priceEl.text("$" + priceTag + " - " + i);
                 imageEl.attr("src", imgUrl);
                 imageEl.attr("data-index", i);
+                imageEl.attr("data-name", cardName);
                 imageEl.attr("data-price", priceTag);
                 imageEl.attr("data-id", cardId);
                 imageEl.attr("data-img", imgUrl);
@@ -63,6 +65,7 @@ function getApi() {
                 var imgUrl = data.data[i].images.small;
                 var priceTag = data.data[i].tcgplayer.prices.holofoil.mid;
                 var cardId = data.data[i].id;
+                var cardName = data.data[i].name;
                 // console.log(priceTag);
                 var aTag = $("<a>");
                 var imageEl = $("<img>");
@@ -72,6 +75,7 @@ function getApi() {
                 priceEl.text("$" + priceTag + " - " + i);
                 imageEl.attr("src", imgUrl);
                 imageEl.attr("data-index", i);
+                imageEl.attr("data-name", cardName);
                 imageEl.attr("data-price", priceTag);
                 imageEl.attr("data-id", cardId);
                 imageEl.attr("data-img", imgUrl);
@@ -81,6 +85,7 @@ function getApi() {
                 // console.log("next");
                 var imgUrl = data.data[i].images.small;
                 var cardId = data.data[i].id;
+                var cardName = data.data[i].name;
                 // var priceTag = data.data[i].tcgplayer.prices.holofoil.mid;
                 // console.log(priceTag);
                 var aTag = $("<a>");
@@ -91,6 +96,7 @@ function getApi() {
                 priceEl.text("$0.00" + " - " + i);
                 imageEl.attr("src", imgUrl);
                 imageEl.attr("data-index", i);
+                imageEl.attr("data-name", cardName);
                 imageEl.attr("data-price", priceTag);
                 imageEl.attr("data-id", cardId);
                 imageEl.attr("data-img", imgUrl);
@@ -108,10 +114,12 @@ function getApi() {
                     cardImg = $(this).attr("data-img");
                     cardPrice = $(this).attr("data-price");
                     cardId = $(this).attr("data-id");
+                    cardNm = $(this).attr("data-name")
                     console.log(cardIndex);
                     console.log(cardImg);
                     console.log(cardPrice);
                     console.log(cardId);
+                    console.log(cardNm);
                 
                     addButton.on("click", function() {
                         // calledIndex = cardIndex;
@@ -123,7 +131,8 @@ function getApi() {
                                     image: cardImg,
                                     price: cardPrice,
                                     id: cardId,
-                                    index: cardIndex
+                                    index: cardIndex,
+                                    name: cardNm
                                 }
                                 // storedCard.push(storedItem);
                                 localStorage.setItem("storedCard", JSON.stringify(storedItem)); 
@@ -131,7 +140,7 @@ function getApi() {
                             
                         // }
                         // get card to collection storage
-                        // addToCollection();
+                        addToCollection();
                     }); 
                 
                 }
@@ -153,9 +162,11 @@ function getApi() {
         
         var collectionImg = $('<img>');
         var collectionPrice = $('<p>');
-        collectionImg.attr('src', getMyCard);
-        collectionPrice.attr('src', getMyCard)
-        sortableEl.append(collectionImg, collectionPrice);
+        var collectionDisplay = $('<div>')
+        collectionImg.attr('src', getMyCard.image);
+        collectionPrice.text("$" + getMyCard.price)
+        collectionDisplay.append(collectionImg, collectionPrice);
+        sortableEl.append(collectionDisplay);
         indexReset();
     }
 
