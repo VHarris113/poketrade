@@ -131,37 +131,12 @@ h1 {
     height:200px;
     background-color: red;
 }
+a {
+    background-color: gray;
+    text-decoration: none;
 
-/* .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    float: right;
-    height: 400px;
-    margin-top: 10px;
-    margin-right: 50px;
-    box-sizing: content-box;
-    background-color: #43464b;
-} */
-
-/* .searchBtn {
-    background-color: #f5b342;
-    width: 30px;
-    height: 30px;
-} */
-
-
-/* .list-group-item.active { */
-/* display: flex;
-justify-content: space-around;
-align-items: space around;} */
-
-
-
-/* #sortable { list-style-type: none; margin: 0; padding: 0; width: 95%; }
-#sortable li { margin: 15px 15px 15px 15px; padding: 5px; float: left; width: 150px; height: 130px; font-size: 4em; text-align: center; 
-} */
-
-/* .cardlist {
-    display: flex;
-    list-style:none; */
+}
+img:hover {
+    -webkit-box-shadow: 0px 2px 16px 4px rgba(0,0,0,0.55); 
+box-shadow: 0px 2px 16px 4px rgba(0,0,0,0.55);
+}

@@ -38,7 +38,8 @@ function getApi() {
                 var priceTag = data.data[i].tcgplayer.prices.normal.mid;
                 // console.log(priceTag);
                 var aTag = $("<a>");
-                var imageEl = $("<img>");
+                var imageEl = $("<img>")
+                imageEl.addClass("hover-shadow");
                 var priceEl = $("<p>")
                 var pageBreak = $("<hr size='3' />")
                 priceEl.text("$" + priceTag + " - " + i);
@@ -52,6 +53,7 @@ function getApi() {
                 // console.log(priceTag);
                 var aTag = $("<a>");
                 var imageEl = $("<img>");
+                imageEl.addClass("over-shadow");
                 var priceEl = $("<p>")
                 var pageBreak = $("<hr size='3' />")
                 priceEl.text("$" + priceTag + " - " + i);
@@ -66,6 +68,7 @@ function getApi() {
                 // console.log(priceTag);
                 var aTag = $("<a>");
                 var imageEl = $("<img>");
+                imageEl.addClass("hover-shadow");
                 var priceEl = $("<p>")
                 var pageBreak = $("<hr size='3' />")
                 priceEl.text("$0.00" + " - " + i);
