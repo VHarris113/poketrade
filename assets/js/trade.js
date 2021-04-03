@@ -13,9 +13,10 @@ var button = $('#matchBtn');
 
 // var getCardHistory =  || [];
 
-function getCurrency () {
-    var currencyApi = https://api.currconv.com/api/v7/convert?q=USD_PHP,PHP_USD&compact=ultra&apiKey=YOUR_API_KEY
-}
+
+
+//uncomment to test
+//echo convertCurrency(10, 'USD', 'PHP');
 
 function getMyCard() {
     imgUrl = JSON.parse(localStorage.getItem("storedCard"));
