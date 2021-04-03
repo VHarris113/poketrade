@@ -51,7 +51,9 @@
                             <!-- Create <p> elements and append to card-content -->
                             <div class='card-content background'></div>
                         </div>
+
                     </div>
+                    <span class="convertedPrice"></span>
                 </div>
                 <div class="col-md-2" id='matchSelection'>
                     <button id='matchBtn' class="middleButtons">Match</button>
@@ -59,11 +61,11 @@
                     <form action="/action_page.php" class="dropDownMenu">
                         <label for="currency" class="currencyBtn ">Currency:</label>
                         <select name="currency" id="currency" class="options">
-                          
+
                         </select>
                         <br><br>
                         <input type="submit" value="Submit" class="submitButton">
-                      </form>
+                    </form>
                 </div>
                 <div id='tradeNewCards' class='col-md-4'>
                     <form id='tradeSearch'>
@@ -79,9 +81,14 @@
                             <div class='card-content'></div>
                         </div>
                     </div>
+                    <span class="convertedPrice"></span>
                 </div>
                 <div id="searchResults" class="col-md-2">
                     Search results will go here
+                    <a><img class="over-shadow" src="https://images.pokemontcg.io/sm9/1.png" data-index="0">
+                        <p id="cardValueUS">$5.99</p>
+                    </a>
+
                 </div>
             </div>
         </div>

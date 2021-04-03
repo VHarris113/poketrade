@@ -108,3 +108,8 @@ nav {
     background-color: lightgray;
     border: medium solid darkslategray;
 }
+
+.convertedPrice {
+    display: block;
+    float: right;
+}

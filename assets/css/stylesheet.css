@@ -93,12 +93,13 @@ ul {
 #siteInfo {
     color: #43464b;
     background-color: #f0f1f3;
+    padding: 5px;
 }
 
 #editorsInfo {
     color: #43464b;
     background-color: #f0f1f3;
-   
+    padding: 5px;
 }
 
 #mainContent {
@@ -133,6 +134,7 @@ ul {
     padding: 10px;
     box-sizing: content-box;
     background-color: #43464b;
+    color: #010203
 }
 
 #howToRow h2 {
