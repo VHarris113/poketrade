@@ -44,7 +44,7 @@ function getApi() {
                 imageEl.addClass("hover-shadow");
                 var priceEl = $("<p>")
                 var pageBreak = $("<hr size='3' />")
-                priceEl.text("$" + priceTag + " - " + i);
+                priceEl.text("~ $" + priceTag);
                 imageEl.attr("src", imgUrl);
                 imageEl.attr("data-index", i);
                 imageEl.attr("data-price", priceTag);
@@ -62,7 +62,7 @@ function getApi() {
                 imageEl.addClass("over-shadow");
                 var priceEl = $("<p>")
                 var pageBreak = $("<hr size='3' />")
-                priceEl.text("$" + priceTag + " - " + i);
+                priceEl.text("~ $" + priceTag);
                 imageEl.attr("src", imgUrl);
                 imageEl.attr("data-index", i);
                 imageEl.attr("data-price", priceTag);
@@ -81,7 +81,7 @@ function getApi() {
                 imageEl.addClass("hover-shadow");
                 var priceEl = $("<p>")
                 var pageBreak = $("<hr size='3' />")
-                priceEl.text("$0.00" + " - " + i);
+                priceEl.text("~ $0.00");
                 imageEl.attr("src", imgUrl);
                 imageEl.attr("data-index", i);
                 imageEl.attr("data-price", priceTag);

@@ -28,76 +28,6 @@ nav {
     
 }
 
-.container {
-    display: flex;
-    height: 85vh;
-    padding: 20px;
-    /* box-sizing: content-box; */
-    margin-left: 0px;
-    border-radius: 5px;
-    background-color: #43464b;
-    border: thick solid #43464b;
-    
-}
-
-#tradeContainer {
-    display: flex;
-}
-
-#matchSelection {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center;
-     
-} 
-
-.middleButtons {
-    display: block;
-    margin-bottom: 10px;
-    width: 95%;
-    border: thick solid #43464b;
-    color: white;
-    font-size: 1.5em;
-}
-
-#matchBtn {
-    margin-bottom: 10px;
-    border: thick solid #43464b;
-    color: white;
-    background-color: #f54905;
-    font-size: 1.5em;
-}
-
-.currencyBtn {
-    margin-bottom: 10px;
-    border: thick solid #43464b;
-    color: white;
-    background-color: #0da148;
-    font-size: 1.5em;
-    width: 100%;
-    text-align: center;
-}
-
-#tradeSearch {
-    padding-bottom: 10px;
-    padding-left: 5px;
-    
-}
-.dropDownMenu {
-    width: 95%;
-    text-align: center;
-}
-#mySearch {
-    padding-bottom: 10px;
-    padding-left: 5px;
-}
-
-#currency option {
-    max-height: 50px;
-    overflow:auto;
-}
-
 .options {
     background-color: lightgray;
     border: medium solid darkslategray;
@@ -112,4 +42,86 @@ nav {
 .convertedPrice {
     display: block;
     float: right;
+}
+
+.container {
+    display: flex;
+    height: 85vh;
+    padding: 20px;
+    /* box-sizing: content-box; */
+    margin-left: 0px;
+    border-radius: 5px;
+    background-color: #43464b;
+    border: thick solid #43464b;
+    
+}
+
+.middleButtons {
+    display: block;
+    margin-bottom: 10px;
+    width: 95%;
+    border: thick solid #43464b;
+    color: white;
+    font-size: 1.5em;
+}
+
+.dropDownMenu {
+    width: 95%;
+    text-align: center;
+}
+
+.currencyBtn {
+    margin-bottom: 10px;
+    border: thick solid #43464b;
+    color: white;
+    background-color: #0da148;
+    font-size: 1.5em;
+    width: 100%;
+    text-align: center;
+}
+
+#tradeContainer {
+    display: flex;
+}
+
+#matchSelection {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+     
+} 
+
+#matchBtn {
+    margin-bottom: 10px;
+    border: thick solid #43464b;
+    color: white;
+    background-color: #f54905;
+    font-size: 1.5em;
+}
+
+#tradeSearch {
+    padding-bottom: 10px;
+    padding-left: 5px;
+    
+}
+
+#mySearch {
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+
+#currency option {
+    max-height: 50px;
+    overflow:auto;
+}
+
+#searchResults {
+    border: solid #5b6770;
+    background-color: #5b6770;
+    font: 20px;
+    font-weight: bold;
+    width: 500px;
+    height: 750px;
+    overflow: auto;
 }
