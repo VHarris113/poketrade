@@ -136,6 +136,10 @@ img:hover {
   margin: 20px;
   padding: 20px;
 }
+
+#sortable img {
+  max-height: 70%
+}
 /* Doesnt exist in the html */
 /* 
 #cardSelector {
