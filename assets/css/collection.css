@@ -107,22 +107,8 @@ h1 {
     background-color: #f5b342;
 }
 
-#sortable {
-    width: 100%;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;  
-}
-
-#sortable li {
-    margin: 3px 3px 3px 0;
-    padding: 1px;
-    float: left;
-    width: 100px;
-    height: 90px;
-    font-size: 4em;
-    text-align: center; 
-}
+#sortable { width: 100%; list-style-type: none; margin: 0; padding: 0;  }
+  #sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 100px; height: 90px; font-size: 4em; text-align: center; }
 
 #sortable {
     width: 100%;
@@ -158,19 +144,12 @@ h1 {
     background-color: #43464b;
 } */
 
-.searchBtn {
+/* .searchBtn {
     background-color: #f5b342;
-    width: 90px;
-    height: 40px;
-    color: #f0f1f3;
-}
+    width: 30px;
+    height: 30px;
+} */
 
-.searchBtn:hover {
-    background-color: #43464b;
-    width: 90px;
-    height: 40px;
-    color: #f0f1f3;
-}
 
 /* .list-group-item.active { */
 /* display: flex;
