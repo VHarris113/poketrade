@@ -77,6 +77,22 @@ img:hover {
   justify-content: center;
 }
 
+.collectionFooter {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.collectionFooter button {
+  background-color: #ec9494;
+  color: #000000;
+  width: 44px;
+  height: 29px;
+}
+
+.collectionFooter button:hover {
+  background-color: #f70000;
+}
+
 /* .list-group-item.active {
   background-color: #f5b342;
 } */
@@ -147,10 +163,10 @@ img:hover {
   flex-wrap: wrap;
 }
 
-#sortable div {
+/* #sortable div {
   margin: -12px;
   margin-bottom: -70px;
-}
+} */
 
 #sortable li {
   width: 50px;
@@ -162,6 +178,7 @@ img:hover {
 #sortable img {
   max-height: 70%;
   border-style: none;
+  margin: 10px;
 }
 
 #card-display hr {
