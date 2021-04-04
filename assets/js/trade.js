@@ -266,15 +266,19 @@ function currencyConvertTradeCard(x, y) {
 }
 
 function evaluateCards() {
-  console.log(convertedPrice2El);
-  console.log(convertedPrice1El);
-  // if (newValue1 > newValue2) {
-  //   goodTradeEl.classList.remove("hidden");
-  // } else {
-  //   badTradeEl.classList.remove("hidden");
-  // }
-  // tradeEvalEl.classList.remove("blank");
-  // tradeEvalEl.classList.add("shown");
+  var price1Text = convertedPrice1El.text();
+  var price2Text = convertedPrice2El.text();
+  var price1 = price1Text.slice(18);
+  var price2 = price2Text.slice(18);
+  var price1Num = parseInt(price1, 10);
+  var price2Num = parseInt(price2, 10);
+  if (price1Num > price2Num) {
+    goodTradeEl.removeClass("hidden");
+  } else if (price2Num > price1Num) {
+    badTradeEl.removeClass("hidden");
+  }
+  tradeEvalEl.removeClass("blank");
+  tradeEvalEl.addClass("shown");
 }
 
 matchBut.on("click", function (event) {
