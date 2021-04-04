@@ -194,6 +194,59 @@ var currencies = [
   "ZWL",
 ];
 
+var storedItemList = [];
+var collectionResultsEl = $('#collectionResults')
+
+function reloadCollection() {
+  collectionResultsEl.html("");
+  storedItemList = JSON.parse(localStorage.getItem("storedCards")) || [];
+  for (var i = 0; i < storedItemList.length; i++) {
+    var getMyCard = storedItemList[i];
+    var collectionImg = $("<img>");
+    var collectionPrice = $("<p id='collectionPrice'>");
+    var deleteButton = $("<button>");
+    var collectionDisplay = $("<div>");
+    var footerDisplay = $("<div>");
+    // deleteButton.id = getMyCard.id;
+    console.log(getMyCard.id)
+    // deleteButton.on("click", cardDeleteButton);
+    // deleteButton.text("X");
+    // adding price and delete button underneath each card in a box for styling
+    collectionImg.attr("src", getMyCard.image);
+    collectionPrice.text("$" + getMyCard.price);
+    footerDisplay.addClass("collectionFooter");
+    // append to sortableEl
+    footerDisplay.append(collectionPrice, deleteButton);
+    collectionDisplay.append(collectionImg, footerDisplay);
+    collectionResultsEl.append(collectionDisplay);
+    // indexReset();
+    // deleteButton.on('click', function() {
+            
+    //     var getDelete = storedItemList;
+    //     console.log(deleteButton.id);
+    //     // console.log(getDelete);
+    //     // //   var i = getDelete.data;
+    //     // console.log(i);
+    //     // console.log(deleteId);
+        
+    //     //   console.log($(this));
+    //     //   console.log(getDelete)
+    //     console.log("Card has been removed from collection.");
+    //     var id = $(this).attr('data-id');
+    //     //   console.log(getDelete.id);
+    //     //   console.log(cardDataId);
+    //     var filteredList = storedItemList.filter((item) => item.id !== cardDataId);
+    //     //   console.log(filteredList);
+    //     localStorage.setItem("storedCards", JSON.stringify(filteredList));
+
+    //     reloadCollection();
+  }
+}
+
+$(function () {
+  reloadCollection();
+})
+
 // function currencySymbol(x) {
 //   var currencySymbolUrl = "https://free.currconv.com/api/v7/currencies?apiKey=53972c8322e6040cface";
 
