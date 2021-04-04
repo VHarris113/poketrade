@@ -18,9 +18,66 @@ var requestUrl = '';
 
 var cardNormal = false;
 
+var cardIndex;
+var cardImg;
+var cardPrice;
+var cardId;
+var cardNm;
+var storedItemList = [];
+
+function reloadCollection() {
+    sortableEl.html("");
+    storedItemList = JSON.parse(localStorage.getItem("storedCards")) || [];
+    for (var i = 0; i < storedItemList.length; i++) {
+        var getMyCard = storedItemList[i];
+        var collectionImg = $('<img>');
+        var collectionPrice = $("<p id='collectionPrice'>");
+        var deleteButton = $('<button>');
+        var collectionDisplay = $('<div>');
+        var footerDisplay = $('<div>');
+        deleteButton.id = getMyCard.id;
+        console.log(getMyCard.id);
+        deleteButton.on('click', cardDeleteButton);
+        deleteButton.text('X');
+        collectionImg.attr('src', getMyCard.image);
+        collectionPrice.text("$" + getMyCard.price);
+        footerDisplay.addClass('collectionFooter');
+        footerDisplay.append(collectionPrice, deleteButton)
+        collectionDisplay.append(collectionImg, footerDisplay);
+        sortableEl.append(collectionDisplay);
+        // indexReset();
+    }
+}
+
+addButton.on("click", function() {
+    // calledIndex = cardIndex;
+    console.log(requestUrl);
+    console.log('Card added to collection.');
+    // if (cardIndex = data.data.length) {
+            // storedCard = JSON.parse(localStorage.getItem("storedCard"));
+            
+            var storedItem = {
+                image: cardImg,
+                price: cardPrice,
+                id: cardId,
+                index: cardIndex,
+                name: cardNm
+            }
+            console.log(storedItem);
+            storedItemList.push(storedItem);
+            // storedCard.push(storedItem);
+            localStorage.setItem("storedCards", JSON.stringify(storedItemList)); 
+        
+        
+    // }
+    // get card to collection storage
+    reloadCollection();
+}); 
+
 $( function() {
     $( "#sortable" ).sortable();
     $( "#sortable" ).disableSelection();
+    reloadCollection();
 });
 
 function getStorage() {
@@ -46,7 +103,7 @@ function getApi() {
                 var cardId = data.data[i].id;
                 var cardName = data.data[i].name;
                 // console.log(priceTag);
-                cardNormal = true;
+                // cardNormal = true;
                 var aTag = $("<a>");
                 var imageEl = $("<img>")
                 imageEl.addClass("hover-shadow");
@@ -107,10 +164,9 @@ function getApi() {
  
             imageEl.on('click', function (event) {
                 var chosenCard = event.target
-                cardIndex = $(this).attr("data-index");
-                
+                console.log(chosenCard);
                 if (chosenCard.matches("img")){
-                    
+                    cardIndex = $(this).attr("data-index");
                     cardImg = $(this).attr("data-img");
                     cardPrice = $(this).attr("data-price");
                     cardId = $(this).attr("data-id");
@@ -120,28 +176,6 @@ function getApi() {
                     console.log(cardPrice);
                     console.log(cardId);
                     console.log(cardNm);
-                
-                    addButton.on("click", function() {
-                        // calledIndex = cardIndex;
-                        console.log(requestUrl);
-                        console.log('Card added to collection.');
-                        // if (cardIndex = data.data.length) {
-                                // storedCard = JSON.parse(localStorage.getItem("storedCard"));
-                                var storedItem = {
-                                    image: cardImg,
-                                    price: cardPrice,
-                                    id: cardId,
-                                    index: cardIndex,
-                                    name: cardNm
-                                }
-                                // storedCard.push(storedItem);
-                                localStorage.setItem("storedCard", JSON.stringify(storedItem)); 
-                            
-                            
-                        // }
-                        // get card to collection storage
-                        addToCollection();
-                    }); 
                 
                 }
 
@@ -157,25 +191,15 @@ function getApi() {
     
     });
  
-    function addToCollection() {
-        var getMyCard = JSON.parse(localStorage.getItem("storedCard"));
-        
-        var collectionImg = $('<img>');
-        var collectionPrice = $('<p>');
-        var collectionDisplay = $('<div>')
-        collectionImg.attr('src', getMyCard.image);
-        collectionPrice.text("$" + getMyCard.price)
-        collectionDisplay.append(collectionImg, collectionPrice);
-        sortableEl.append(collectionDisplay);
-        indexReset();
-    }
+    
 
-    function indexReset() {
-        savedCards = [];
-        cardIndex = [];
-        calledIndex = [];
-        requestUrl = '';
-    }
+
+    // function indexReset() {
+    //     savedCards = [];
+    //     cardIndex = [];
+    //     calledIndex = [];
+    //     requestUrl = '';
+    // }
 
     // select card
 
@@ -225,6 +249,14 @@ searchForm.on("submit", function(event) {
         // }
     
 // remove card from local storage
-removeButton.on("click", function() {
+function cardDeleteButton() {
+    console.log($(this));
     console.log("Card has been removed from collection.");
-})
+    var id = $(this).attr("id");
+    console.log(id);
+    var filteredList = storedItemList.filter(item=>item.id!==id);
+    console.log(filteredList);   
+    localStorage.setItem("storedCards", JSON.stringify(filteredList)); 
+    
+    reloadCollection();
+}
