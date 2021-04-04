@@ -23,10 +23,10 @@ var tradeCardVal = $("#tradePrice").text();
 
 //array of currencies
 var currencies = [
-  "AED",
-  "AFN",
-  "ALL",
-  "AMD",
+  "د.إ - AED",
+  "؋ - AFN",
+  "Lek - ALL",
+  "֏ - AMD",
   "ANG",
   "AOA",
   "ARS",
