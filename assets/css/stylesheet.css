@@ -1,6 +1,6 @@
 * {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    width: -moz-fit-content;
+    box-sizing: border-box;
 }
 
 
@@ -9,6 +9,7 @@ main {
 }
 
 nav {
+    display: flex;
     background-color: #43464b;
     color: #f0f1f3;
     margin-top: 10px;
@@ -34,6 +35,7 @@ div {
 }
 
 aside {
+    flex: 1;
     color: #43464b;
     border-style: solid;
     box-sizing: content-box;
@@ -157,3 +159,23 @@ ul {
     box-sizing: content-box;
     width: 50%;
 }
+
+@media screen and (max-width: 768px) {
+    /* Use flex-direction to stack the navbar, sidebar, and body */
+    nav,
+    aside,
+    main {
+      flex-direction: column;
+      margin: auto;
+    }
+    /* Make the sidebar stack below the body */
+    /* Change the header background */
+    /* header {
+      background: #772014;
+    } */
+    /* Change the navbar and footer background */
+    nav {
+        display: flex;
+        text-align: center;
+    }
+  }
