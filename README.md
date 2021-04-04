@@ -14,7 +14,6 @@ At the top is a navigation bar for easy trek through the website to the differen
 The main display itself also illustrates an interesting loading animation of each card before it is presented to the user. The act of turning a face down card up to display the cards that belong in our website's inventories (aka APIs and local storage).
 
 Then below that is a general summary of how the site works.
-<<<<<<< HEAD
 
 ![Homepage](https://github.com/VHarris113/project-one/blob/css/assets/images/homepagescreencap.png)
 
