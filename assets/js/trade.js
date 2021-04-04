@@ -5,6 +5,8 @@ var mySearchInput = $("#mySearchInput");
 var mySearch = $("#mySearch");
 var partnerTradeButton = $("#partner-add-to-trade");
 var partnerTradeDisplay = $("#trade-img-holder");
+var myTradeButton = $("#collection-to-trade");
+var myTradeDisplay = $("#my-trade-display")
 
 var pokeName;
 
@@ -15,7 +17,10 @@ var searchResultImg = $("#searchResults");
 var button = $("#matchBtn");
 
 var partnerCollectionPrices = [];
-var partnerPriceTotal = 0
+var partnerPriceTotal = 0;
+
+var myCollectionPrices = [];
+var myPriceTotal = 0;
 
 var convertedPrice1El = $("#convertedPrice1");
 var convertedPrice2El = $("#convertedPrice2");
@@ -209,11 +214,13 @@ function reloadCollection() {
     var collectionDisplay = $("<div>");
     var footerDisplay = $("<div>");
     // deleteButton.id = getMyCard.id;
-    console.log(getMyCard.id)
+    // console.log(getMyCard.id)
     // deleteButton.on("click", cardDeleteButton);
     // deleteButton.text("X");
     // adding price and delete button underneath each card in a box for styling
     collectionImg.attr("src", getMyCard.image);
+    collectionImg.attr("data-price", storedItemList[i].price);
+    collectionImg.attr("data-img", storedItemList[i].image)
     collectionPrice.text("$" + getMyCard.price);
     footerDisplay.addClass("collectionFooter");
     // append to sortableEl
@@ -241,7 +248,24 @@ function reloadCollection() {
     //     localStorage.setItem("storedCards", JSON.stringify(filteredList));
 
     //     reloadCollection();
-  }
+    collectionImg.on("click", function (event) {
+      var chosenCard = event.target;
+      // console.log(chosenCard);
+      if (chosenCard.matches("img")) {
+        // cardIndex = $(this).attr("data-index");
+        cardImg = $(this).attr("data-img");
+        cardPrice = $(this).attr("data-price");
+        // cardDataId = $(this).attr("data-id");
+        // cardNm = $(this).attr("data-name");
+        // console.log(cardIndex);
+        console.log(cardImg);
+        console.log(cardPrice);
+        // console.log(cardDataId);
+        // console.log(cardNm);
+      }
+  })
+  
+}
 }
 
 $(function () {
@@ -515,12 +539,49 @@ partnerTradeButton.on("click", function () {
   // reloadCollection();
 });
 
+myTradeButton.on("click", function (){
+  var storedItem = {
+    image: cardImg,
+    price: cardPrice,
+    // id: cardDataId,
+    // index: cardIndex,
+    // name: cardNm,
+  };
+  console.log(storedItem);
+  var myTradeDisplayCard = $("<img>");
+  var myPriceDisplay = $("<div>");
+  var myCollectionDisplay = $("<div>");
+  var myDeleteButton = $("<button>")
+  var myTradeItemDisplay = $("<div>")
+  myDeleteButton.id = storedItem.id;
+  myDeleteButton.text("X");
+  myTradeDisplayCard.attr("src", storedItem.image);
+  myPriceDisplay.text("$" + storedItem.price);
+  myTradeItemDisplay.append(myPriceDisplay, myDeleteButton);
+  myCollectionDisplay.append(myTradeDisplayCard, myTradeItemDisplay);
+  myTradeDisplay.append(myCollectionDisplay);
+  console.log(storedItem.price);
+  console.log(myCollectionPrices);
+  var priceVal = parseFloat(storedItem.price);
+  myCollectionPrices.push(priceVal);
+  console.log(myCollectionPrices);
+  addMyTradeTotal();
+  // addPartnerTradeTotal();
+})
+
 function addPartnerTradeTotal (){
   var sum = partnerCollectionPrices.reduce(function(a, b) {
     return a + b
   }, 0);
   convertedPrice2El.text(sum);
 };
+
+function addMyTradeTotal(){
+  var sum = myCollectionPrices.reduce(function(a, b){
+    return a + b
+  }, 0);
+  convertedPrice1El.text(sum);
+}
 
 searchForm.on("submit", function (event) {
   event.preventDefault();
