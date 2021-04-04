@@ -275,66 +275,84 @@ function getTradeCard() {
           var imgUrl = data.data[i].images.small;
           var priceTag = data.data[i].tcgplayer.prices.normal.mid;
           var cardId = data.data[i].id;
-          // console.log(priceTag);
+          var cardName = data.data[i].name;
           var aTag = $("<a>");
-          var imageEl = $("<img>")
+          var imageEl = $("<img>");
           imageEl.addClass("hover-shadow");
-          var priceEl = $("<p>")
-          var pageBreak = $("<hr size='3' />")
+          var priceEl = $("<p>");
+          var pageBreak = $("<hr size='3' />");
           priceEl.text("$" + priceTag + " - " + i);
           imageEl.attr("src", imgUrl);
           imageEl.attr("data-index", i);
+          imageEl.attr("data-name", cardName);
           imageEl.attr("data-price", priceTag);
           imageEl.attr("data-id", cardId);
           imageEl.attr("data-img", imgUrl);
           aTag.append(imageEl, priceEl);
           searchResultImg.append(aTag, pageBreak);
-      } else if (data.data[i].tcgplayer && data.data[i]?.tcgplayer.prices.holofoil){
+        } else if (
+          data.data[i].tcgplayer &&
+          data.data[i]?.tcgplayer.prices.holofoil
+        ) {
           var imgUrl = data.data[i].images.small;
           var priceTag = data.data[i].tcgplayer.prices.holofoil.mid;
           var cardId = data.data[i].id;
-          // console.log(priceTag);
+          var cardName = data.data[i].name;
           var aTag = $("<a>");
           var imageEl = $("<img>");
           imageEl.addClass("over-shadow");
-          var priceEl = $("<p>")
-          var pageBreak = $("<hr size='3' />")
+          var priceEl = $("<p>");
+          var pageBreak = $("<hr size='3' />");
           priceEl.text("$" + priceTag + " - " + i);
           imageEl.attr("src", imgUrl);
           imageEl.attr("data-index", i);
+          imageEl.attr("data-name", cardName);
           imageEl.attr("data-price", priceTag);
           imageEl.attr("data-id", cardId);
           imageEl.attr("data-img", imgUrl);
           aTag.append(imageEl, priceEl);
           searchResultImg.append(aTag, pageBreak);
-      } else if (!data.data[i].tcgplayer) {
-          // console.log("next");
+        } else if (!data.data[i].tcgplayer) {
           var imgUrl = data.data[i].images.small;
           var cardId = data.data[i].id;
-          // var priceTag = data.data[i].tcgplayer.prices.holofoil.mid;
-          // console.log(priceTag);
+          var cardName = data.data[i].name;
           var aTag = $("<a>");
           var imageEl = $("<img>");
           imageEl.addClass("hover-shadow");
-          var priceEl = $("<p>")
-          var pageBreak = $("<hr size='3' />")
+          var priceEl = $("<p>");
+          var pageBreak = $("<hr size='3' />");
           priceEl.text("$0.00" + " - " + i);
           imageEl.attr("src", imgUrl);
           imageEl.attr("data-index", i);
+          imageEl.attr("data-name", cardName);
           imageEl.attr("data-price", priceTag);
           imageEl.attr("data-id", cardId);
           imageEl.attr("data-img", imgUrl);
           aTag.append(imageEl, priceEl);
           searchResultImg.append(aTag, pageBreak);
+        }
+
+        imageEl.on("click", function (event) {
+          var chosenCard = event.target;
+          console.log(chosenCard);
+          if (chosenCard.matches("img")) {
+            cardIndex = $(this).attr("data-index");
+            cardImg = $(this).attr("data-img");
+            cardPrice = $(this).attr("data-price");
+            cardId = $(this).attr("data-id");
+            cardNm = $(this).attr("data-name");
+            console.log(cardIndex);
+            console.log(cardImg);
+            console.log(cardPrice);
+            console.log(cardId);
+            console.log(cardNm);
+          }
+        });
       }
-      // button.on('click', function(event) {
-      //     event.preventDefault();
-      //     localStorage.setItem("storedCard", JSON.stringify(data.data[0].images.small));
-      // })
-    }
-})
+    });
 
 };
+
 mySearch.on("submit", function (event) {
   event.preventDefault();
   myCardImg.empty();
