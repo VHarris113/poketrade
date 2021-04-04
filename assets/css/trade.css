@@ -87,7 +87,7 @@ img:hover {
 
 .container {
     display: flex;
-    height: 85vh;
+    height: 80vh;
     padding: 20px;
     /* box-sizing: content-box; */
     margin-left: 0px;
@@ -172,6 +172,11 @@ img:hover {
     overflow: auto;
 }
 
+#searchResults img {
+    max-width: 75%;
+    min-width: 75%;
+}
+
 #collectionResults {
     border: solid #5b6770;
     background-color: #43464b;
@@ -196,10 +201,14 @@ img:hover {
     height: 750px; */
   }
   
+#tradeMyCards img {
+    max-width: 75%;
+    min-width: 75%;
+}
 
 #trade-img-holder img {
     /* max-height: 50%; */
-    max-width: 50%;
+    max-width: 75%;
     /* min-height: 50%; */
-    min-width: 50%;
+    min-width: 75%;
 }
