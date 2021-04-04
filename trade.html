@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/trade.css" ">
     <title>Document</title>
 </head>
@@ -52,37 +53,41 @@
                             <div class='card-content background'></div>
                         </div>
                         <!-- Placeholder card to complete currency function -->
-                       
-                       
+
+
                         <div>
                             <img src="https://images.pokemontcg.io/sm9/182.png">
                             <div class="collectionFooter">
                                 <p id="collectionPrice">$69.85</p><button>X</button>
                             </div>
                         </div>
-                   
-                   
-                   
+
+
+
                     </div>
                     <span class="convertedPrice" id="convertedPrice1"></span>
-                </div>
+                    </div>
                 <div class="col-md-2" id='matchSelection'>
+                    <!-- presents good trade / bad trade image depending on comparison -->
+                    <div id="tradeEval">
+                        <div id="goodTrade" class="hidden"><img src="assets/images/pokemon_good.jpg" alt="Pokemon Good Trade" class="goodBadImage"> Good Trade!</div>
+                        <div id="badTrade" ><img src="assets/images/pokemon_bad.png" alt="Pokemon bad trade" class="goodBadImage">Bad Trade!</div>
+                    </div>
                     <button id='matchBtn' class="middleButtons">Match</button>
 
                     <form action="/action_page.php" class="dropDownMenu">
                         <label for="currency" class="currencyBtn ">Currency:</label>
-                        <select name="currency" id="currency" class="options">
-
-                        </select>
-
+                        <select name="currency" id="currency" class="options"></select>
                     </form>
+                    
                 </div>
                 <div id='tradeNewCards' class='col-md-4'>
                     <form id='tradeSearch'>
                         <input id='tradeSearchInput' type='search' placeholder='search' aria-label='search'>
                         <button id='tradeSearchBtn' type='submit'>(s)</button>
+                        <button id="partner-add-to-trade" type="submit">Add to trade</button>
                     </form>
-                    <button id="partner-add-to-trade" type="submit">Add to trade</button>
+                    
                     <div class='container background'>
                         <div class='card'>
                             <!-- Create this element in JQuery getting api img and appending to <p> -->
@@ -90,11 +95,15 @@
                             </div>
                             <!-- Create <p> elements and append to card-content -->
                             <div class='card-content'></div>
-                            
-                            
-                            
+
+
+
                             <!-- placeholder card to complete currency function -->
-                            <a><img src="https://images.pokemontcg.io/ex12/5.png" data-index="1" data-name="Gengar" data-price="20.79" data-id="ex12-5" data-img="https://images.pokemontcg.io/ex12/5.png"><p id="tradePrice">$20.79 - 1</p></a>
+                            <a><img src="https://images.pokemontcg.io/ex12/5.png" data-index="1" data-name="Gengar"
+                                    data-price="20.79" data-id="ex12-5"
+                                    data-img="https://images.pokemontcg.io/ex12/5.png">
+                                <p id="tradePrice">$20.79 - 1</p>
+                            </a>
                         </div>
                     </div>
                     <span class="convertedPrice" id="convertedPrice2"></span>
