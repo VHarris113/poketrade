@@ -171,3 +171,24 @@ img:hover {
 #card-display hr {
   border-top: 10px solid rgba(0, 0, 0, 0.1);
 }
+
+/* @media screen and (max-width: 768px) {
+
+  main,
+  aside {
+    flex-direction: column;
+  }
+
+  nav {
+    resize: 15%;
+  }
+
+  aside {
+    order: 1px;
+  }
+  
+  header {
+    size: 10px;
+  }
+  
+} */
