@@ -437,8 +437,19 @@ partnerTradeButton.on("click", function () {
   };
   console.log(storedItem);
   var partnerTradeDisplayCard = $("<img>");
+  var partnerPriceDisplay = $("<div>");
+  var partnerCollectionDisplay = $("<div>");
+  var partnerDeleteButton = $("<button>")
+  var partnerTradeItemDisplay = $("<div>")
+  partnerDeleteButton.id = storedItem.id;
+  partnerDeleteButton.text("X");
   partnerTradeDisplayCard.attr("src", storedItem.image);
-  partnerTradeDisplay.append(partnerTradeDisplayCard);
+  partnerPriceDisplay.text("$" + storedItem.price);
+  partnerTradeItemDisplay.append(partnerPriceDisplay, partnerDeleteButton);
+  partnerCollectionDisplay.append(partnerTradeDisplayCard, partnerTradeItemDisplay);
+  // partnerTradeDisplayCard.append(partnerPriceDisplay);
+  partnerTradeDisplay.append(partnerCollectionDisplay);
+  
   // reloadCollection();
 });
 
