@@ -171,3 +171,24 @@ img:hover {
     height: 750px;
     overflow: auto;
 }
+#trade-img-holder {
+    border: solid #43464b;
+    background-color: #43464b;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap:wrap;
+    flex-direction: row;
+    overflow: auto;
+    /* font: 20px; */
+    /* font-weight: bold; */
+    /* width: 500px;
+    height: 750px; */
+  }
+  
+
+#trade-img-holder img {
+    /* max-height: 50%; */
+    max-width: 50%;
+    /* min-height: 50%; */
+    min-width: 50%;
+}
