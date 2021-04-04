@@ -8,16 +8,17 @@ var pokeName;
 
 var myCardImg = $("#img-holder");
 var tradeImg = $("#trade-img-holder");
-var searchResultImg = $("#searchResults")
+var searchResultImg = $("#searchResults");
 
 var button = $("#matchBtn");
 
 var convertedPrice1El = $("#convertedPrice1");
-var convertedPrice2El = $("#convertedPrice2")
+var convertedPrice2El = $("#convertedPrice2");
 var matchBut = $("#matchBtn");
 var currencySelection = $("#currency");
-var cardValueUSEl = $("#cardValueUS");
-var cardVal = cardValueUSEl.text();
+var cardVal = $("#collectionPrice").text();
+var tradeCardVal = $("#tradePrice").text();
+
 //array of currencies
 var currencies = [
   "AED",
@@ -188,35 +189,84 @@ var currencies = [
   "ZWL",
 ];
 
+// function currencySymbol(x) {
+//   var currencySymbolUrl = "https://free.currconv.com/api/v7/currencies?apiKey=53972c8322e6040cface";
+
+//   fetch(currencySymbolUrl)
+//   .then(function (response) {
+//     return response.json();
+//   })
+//   .then (function (data) {
+//     console.log(Object.values(data));
+//     var countryDataArray = Object.values(data);
+//     var country = Object.values(x);
+//     console.log(country);
+//     // var countryData = data.results
+//   })
+// }
 //converts currency with x=country code & y=truncated card value
 function currencyConvert(x, y) {
   var currencyUrl = `https://free.currconv.com/api/v7/convert?q=USD_${x}&compact=ultra&apiKey=53972c8322e6040cface`;
+  if (x == "USD") {
+    convertedPrice1El.text(y);
+  } else {
+    fetch(currencyUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+        console.log(Object.values(data));
+        var lookupValue = Object.values(data);
+        var exchangeRate = lookupValue[0];
+        var yNum = parseInt(y, 10);
+        console.log(exchangeRate);
+        console.log(typeof exchangeRate);
+        var newValue = yNum * exchangeRate;
+        var newValue1 = newValue.toFixed(2);
+        console.log(newValue1);
+        convertedPrice1El.text("Converted Price = " + newValue1);
+      });
+  }
+}
 
-  fetch(currencyUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      console.log(Object.values(data));
-      var lookupValue = Object.values(data);
-      var exchangeRate = lookupValue[0];
-      var yNum = parseInt(y, 10);
-      console.log(exchangeRate);
-      console.log(typeof exchangeRate);
-      var newValue = yNum * exchangeRate;
-      var newValue1 = newValue.toFixed(2);
-      console.log(newValue1);
-      convertedPrice1El.text("Converted Price = " + newValue1);
-    });
+function currencyConvertTradeCard(x, y) {
+  var currencyUrl = `https://free.currconv.com/api/v7/convert?q=USD_${x}&compact=ultra&apiKey=53972c8322e6040cface`;
+
+  if (x == "USD") {
+    convertedPrice2El.text(y);
+  } else {
+    fetch(currencyUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+        console.log(Object.values(data));
+        var lookupValue = Object.values(data);
+        var exchangeRate = lookupValue[0];
+        var yNum = parseInt(y, 10);
+        console.log(exchangeRate);
+        console.log(typeof exchangeRate);
+        var newValue = yNum * exchangeRate;
+        var newValue1 = newValue.toFixed(2);
+        console.log(newValue1);
+        convertedPrice2El.text("Converted Price = " + newValue1);
+      });
+  }
 }
 
 matchBut.on("click", function (event) {
-    event.preventDefault;
-    var countryCode = currencySelection.val();
-    //cuts price to 2 digits past dollar
-    var cardValUs = cardVal.substring(1);
-    currencyConvert(countryCode, cardValUs);
+  event.preventDefault;
+  var countryCode = currencySelection.val();
+  //cuts price to 2 digits past dollar
+  var cardValUs = cardVal.substring(1);
+  var tradeCardValUs = tradeCardVal.substring(1);
+  var tradeCVal = tradeCardValUs.split(" ");
+  var tradeCardValFinal = tradeCVal[0];
+  currencyConvert(countryCode, cardValUs);
+  currencyConvertTradeCard(countryCode, tradeCardValFinal);
+  // currencySymbol(countryCode);
 });
 
 //function to add the list of currencies to the drop-down menu
@@ -230,9 +280,6 @@ function addCurrencies() {
 }
 //calls function to add currency list
 addCurrencies();
-// var countryCode = "EUR";
-
-
 
 //uncomment to test
 //echo convertCurrency(10, 'USD', 'PHP');
@@ -282,6 +329,7 @@ function getTradeCard() {
           var priceEl = $("<p>");
           var pageBreak = $("<hr size='3' />");
           priceEl.text("$" + priceTag + " - " + i);
+          priceEl.attr("id", "tradePrice");
           imageEl.attr("src", imgUrl);
           imageEl.attr("data-index", i);
           imageEl.attr("data-name", cardName);
@@ -300,10 +348,10 @@ function getTradeCard() {
           var cardName = data.data[i].name;
           var aTag = $("<a>");
           var imageEl = $("<img>");
-          imageEl.addClass("over-shadow");
           var priceEl = $("<p>");
           var pageBreak = $("<hr size='3' />");
           priceEl.text("$" + priceTag + " - " + i);
+          priceEl.attr("id", "tradePrice");
           imageEl.attr("src", imgUrl);
           imageEl.attr("data-index", i);
           imageEl.attr("data-name", cardName);
@@ -318,10 +366,10 @@ function getTradeCard() {
           var cardName = data.data[i].name;
           var aTag = $("<a>");
           var imageEl = $("<img>");
-          imageEl.addClass("hover-shadow");
           var priceEl = $("<p>");
           var pageBreak = $("<hr size='3' />");
           priceEl.text("$0.00" + " - " + i);
+          priceEl.attr("id", "tradePrice");
           imageEl.attr("src", imgUrl);
           imageEl.attr("data-index", i);
           imageEl.attr("data-name", cardName);
@@ -350,8 +398,7 @@ function getTradeCard() {
         });
       }
     });
-
-};
+}
 
 mySearch.on("submit", function (event) {
   event.preventDefault();
