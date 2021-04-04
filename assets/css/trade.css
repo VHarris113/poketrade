@@ -171,6 +171,17 @@ img:hover {
     height: 750px;
     overflow: auto;
 }
+
+#collectionResults {
+    border: solid #5b6770;
+    background-color: #43464b;
+    font: 20px;
+    font-weight: bold;
+    width: 500px;
+    height: 750px;
+    overflow: auto;
+}
+
 #trade-img-holder {
     border: solid #43464b;
     background-color: #43464b;
