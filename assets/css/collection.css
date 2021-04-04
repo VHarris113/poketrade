@@ -46,13 +46,44 @@ img:hover {
   margin: 10px;
 }
 
-.list-group-item.active {
-  background-color: #f5b342;
+.btn-outline-success {
+  background-color: #4254f5;
+  border-color: #43464b;
+  color: #f0f1f3
 }
+
+.btn-info {
+  background-color: #1ce458;
+  color: #000000
+}
+
+.btn-secondary {
+  background-color: #f7a900;
+  color: #000000;
+}
+
+.btn-info:hover,
+.btn-secondary:hover,
+.btn-outline-success:hover {
+  background-color: #f70000
+}
+
+.form-inline {
+  justify-content: center;
+}
+
+/* .list-group-item.active {
+  background-color: #f5b342;
+} */
 
 #searchColumn {
   padding-right: 30px;
   position: initial;
+}
+
+#searchColumn div {
+  display: flex;
+  justify-content: center;
 }
 
 #card-display {
