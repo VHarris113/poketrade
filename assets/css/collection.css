@@ -72,6 +72,11 @@ img:hover {
   justify-content: center;
 }
 
+.addRemove {
+  display: flex;
+  justify-content: center;
+}
+
 /* .list-group-item.active {
   background-color: #f5b342;
 } */
@@ -156,7 +161,7 @@ img:hover {
 
 #sortable img {
   max-height: 70%;
-  padding: 10px;
+  border-style: none;
 }
 
 #card-display hr {
