@@ -54,16 +54,12 @@ img:hover {
 
 .btn-info {
   background-color: #1ce458;
-  color: #000000
-}
-
-.btn-secondary {
-  background-color: #f7a900;
   color: #000000;
+  width: 500px;
+
 }
 
 .btn-info:hover,
-.btn-secondary:hover,
 .btn-outline-success:hover {
   background-color: #f70000
 }
