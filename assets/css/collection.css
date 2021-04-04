@@ -32,10 +32,6 @@ aside {
   margin-right: 1px;
 }
 
-.row {
-  margin-left: -157px;
-}
-
 .navbar-brand {
   color: #f0f1f3;
 }
@@ -54,15 +50,17 @@ aside {
 .btn-outline-success {
   background-color: #4254f5;
   border-color: #43464b;
-  color: #f0f1f3
+  color: #f0f1f3;
+  margin-left: -43px;
 }
 
 .btn-info {
   background-color: #1ce458;
   color: #000000;
   width: 500px;
-  margin: -11px;
-  margin-left: 184px;
+  margin: 1px;
+  margin-left: 2px;
+  margin-right: -50px;
 
 }
 
@@ -104,34 +102,26 @@ aside {
 
 
 #card-display {
-  border: solid #43464b;
   background-color: #43464b;
-  font: 20px;
-  font-weight: bold;
   width: 502px;
   height: 700px;
   overflow: scroll;
   overflow-x: hidden;
-  justify-content: 1px;
-  margin: 12px;
 }
 
 #card-display img {
   vertical-align: middle;
   border-style: none;
-  height: 50%;
+  height: 80%;
   margin: 20px;
   margin-left: 110px;
-  width: 67%;
-  height: 80%;
 }
 
 #card-display p {
-  margin-top: 0;
+  margin-top: -13px;
   margin-bottom: 1rem;
-  margin-left: -4px;
+  margin-left: 80px;
   text-align: center;
-  font-size: bolder;
 }
 
 #card-display hr {
@@ -155,9 +145,10 @@ aside {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: space-around;
-  margin: 20px;
-  width: 87%;
+  margin: 40px;
+  width: 100%;
+  margin-left: -100px;
+  margin-top: 10px;
 }
 
 #collection-header {
@@ -170,6 +161,7 @@ aside {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  margin-right: -80px;
 }
 
 #sortable li {
