@@ -258,6 +258,22 @@ function currencyConvertTradeCard(x, y) {
   }
 }
 
+function evaluateCards() {
+  var price1Text = convertedPrice1El.text();
+  var price2Text = convertedPrice2El.text();
+  var price1 = price1Text.slice(18);
+  var price2 = price2Text.slice(18);
+  var price1Num = parseInt(price1, 10);
+  var price2Num = parseInt(price2, 10);
+  if (price1Num > price2Num) {
+    goodTradeEl.removeClass("hidden");
+  } else if (price2Num > price1Num) {
+    badTradeEl.removeClass("hidden");
+  }
+  tradeEvalEl.removeClass("blank");
+  tradeEvalEl.addClass("shown");
+}
+
 matchBut.on("click", function (event) {
   event.preventDefault;
   var countryCode = currencySelection.val();
