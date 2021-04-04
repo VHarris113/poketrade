@@ -51,7 +51,7 @@ aside {
   background-color: #4254f5;
   border-color: #43464b;
   color: #f0f1f3;
-  margin-left: -43px;
+  margin-left: -38px;
 }
 
 .btn-info {
@@ -94,6 +94,10 @@ aside {
   background-color: #f70000;
 }
 
+.form-control {
+  margin-left: -120px;
+}
+
 #searchColumn {
   padding-right: 30px;
   position: initial;
@@ -125,7 +129,7 @@ aside {
 }
 
 #card-display hr {
-  border-top: 10px solid rgba(0, 0, 0, 0.1);
+  color: #000000;
 }
 
 #collectionPage {
