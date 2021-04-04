@@ -168,14 +168,25 @@ ul {
       flex-direction: column;
       margin: auto;
     }
-    /* Make the sidebar stack below the body */
-    /* Change the header background */
-    /* header {
-      background: #772014;
-    } */
-    /* Change the navbar and footer background */
-    nav {
-        display: flex;
-        text-align: center;
+
+    nav  {
+        display: inline-block;
+        margin-right: 1px;
+    }
+ 
+    aside {
+        margin-right: 10px;
+    }
+
+    #pageContainer {
+        margin-right: 20px;
+    }
+
+    #pick {
+        display: none;
+    }
+
+    #info {
+        max-width: 70%;
     }
   }
