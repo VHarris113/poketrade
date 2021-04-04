@@ -122,6 +122,8 @@ aside {
   height: 50%;
   margin: 20px;
   margin-left: 110px;
+  width: 67%;
+  height: 80%;
 }
 
 #card-display p {
@@ -130,6 +132,10 @@ aside {
   margin-left: -4px;
   text-align: center;
   font-size: bolder;
+}
+
+#card-display hr {
+  border-top: 10px solid rgba(0, 0, 0, 0.1);
 }
 
 #collectionPage {
