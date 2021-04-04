@@ -23,6 +23,7 @@ body {
     background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
     margin: -10px;
     margin-right: -17px;
+    overflow-x: hidden;
 }
 
 
@@ -80,6 +81,7 @@ ul {
 .cardlist {
     list-style: none;
     justify-content: space-around;
+    margin-right: 12px;
 }
 #info {
     box-sizing: content-box;
@@ -130,7 +132,7 @@ ul {
     justify-content: center;
     float: right;
     width: 90%;
-    height: 250px;
+    height: 334px;
     margin-top: 10px;
     margin-right: 41px;;
     padding: 10px;
@@ -168,14 +170,41 @@ ul {
       flex-direction: column;
       margin: auto;
     }
-    /* Make the sidebar stack below the body */
-    /* Change the header background */
-    /* header {
-      background: #772014;
-    } */
-    /* Change the navbar and footer background */
-    nav {
-        display: flex;
-        text-align: center;
+
+    nav  {
+        display: inline-block;
+        margin-right: 1px;
+    }
+ 
+    aside {
+        margin-right: 10px;
+    }
+    
+    .cardlist {
+        list-style: none;
+        justify-content: space-around;
+        margin-right: -16px;
+    }
+
+    .cardlist img {
+        vertical-align: middle;
+        border-style: none;
+        width: 124px;
+        height: 202px;
+        margin-left: -34px;
+    }
+
+    #pageContainer {
+        margin-right: 20px;
+    }
+
+    #howToRow {
+        margin-right: 15px;
+        height: 508px;
+
+    }
+
+    #info {
+        max-width: 70%;
     }
   }
