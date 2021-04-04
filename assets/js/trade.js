@@ -3,6 +3,8 @@ var tradeInput = $("#tradeSearchInput");
 var searchForm = $("#tradeSearch");
 var mySearchInput = $("#mySearchInput");
 var mySearch = $("#mySearch");
+var partnerTradeButton = $("#partner-add-to-trade");
+var partnerTradeDisplay = $("#trade-img-holder");
 
 var pokeName;
 
@@ -387,12 +389,12 @@ function getTradeCard() {
             cardIndex = $(this).attr("data-index");
             cardImg = $(this).attr("data-img");
             cardPrice = $(this).attr("data-price");
-            cardId = $(this).attr("data-id");
+            cardDataId = $(this).attr("data-id");
             cardNm = $(this).attr("data-name");
             console.log(cardIndex);
             console.log(cardImg);
             console.log(cardPrice);
-            console.log(cardId);
+            console.log(cardDataId);
             console.log(cardNm);
           }
         });
@@ -404,6 +406,24 @@ mySearch.on("submit", function (event) {
   event.preventDefault();
   myCardImg.empty();
   getMyCard();
+});
+
+partnerTradeButton.on("click", function () {
+  // console.log(requestUrl);
+  console.log("Card added to collection.");
+
+  var storedItem = {
+    image: cardImg,
+    price: cardPrice,
+    id: cardDataId,
+    index: cardIndex,
+    name: cardNm,
+  };
+  console.log(storedItem);
+  var partnerTradeDisplayCard = $("<img>");
+  partnerTradeDisplayCard.attr("src", storedItem.image);
+  partnerTradeDisplay.append(partnerTradeDisplayCard);
+  // reloadCollection();
 });
 
 searchForm.on("submit", function (event) {
