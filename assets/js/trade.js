@@ -12,7 +12,8 @@ var searchResultImg = $("#searchResults")
 
 var button = $("#matchBtn");
 
-var convertedPriceEl = $(".convertedPrice");
+var convertedPrice1El = $("#convertedPrice1");
+var convertedPrice2El = $("#convertedPrice2")
 var matchBut = $("#matchBtn");
 var currencySelection = $("#currency");
 var cardValueUSEl = $("#cardValueUS");
@@ -206,7 +207,7 @@ function currencyConvert(x, y) {
       var newValue = yNum * exchangeRate;
       var newValue1 = newValue.toFixed(2);
       console.log(newValue1);
-      convertedPriceEl.text("Converted Price = " + newValue1);
+      convertedPrice1El.text("Converted Price = " + newValue1);
     });
 }
 
