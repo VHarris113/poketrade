@@ -20,9 +20,6 @@ var matchBut = $("#matchBtn");
 var currencySelection = $("#currency");
 var cardVal = $("#collectionPrice").text();
 var tradeCardVal = $("#tradePrice").text();
-var goodTradeEl = $("#goodTrade");
-var badTradeEl = $("#badTrade");
-var tradeEvalEl = $("#tradeEval");
 
 //array of currencies
 var currencies = [
@@ -214,7 +211,6 @@ function currencyConvert(x, y) {
   var currencyUrl = `https://free.currconv.com/api/v7/convert?q=USD_${x}&compact=ultra&apiKey=53972c8322e6040cface`;
   if (x == "USD") {
     convertedPrice1El.text(y);
-    evaluateCards();
   } else {
     fetch(currencyUrl)
       .then(function (response) {
@@ -232,7 +228,6 @@ function currencyConvert(x, y) {
         var newValue1 = newValue.toFixed(2);
         console.log(newValue1);
         convertedPrice1El.text("Converted Price = " + newValue1);
-        evaluateCards();
       });
   }
 }
@@ -242,7 +237,6 @@ function currencyConvertTradeCard(x, y) {
 
   if (x == "USD") {
     convertedPrice2El.text(y);
-    evaluateCards();
   } else {
     fetch(currencyUrl)
       .then(function (response) {
@@ -260,7 +254,6 @@ function currencyConvertTradeCard(x, y) {
         var newValue1 = newValue.toFixed(2);
         console.log(newValue1);
         convertedPrice2El.text("Converted Price = " + newValue1);
-        evaluateCards();
       });
   }
 }
