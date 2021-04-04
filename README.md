@@ -14,7 +14,9 @@ At the top is a navigation bar for easy trek through the website to the differen
 The main display itself also illustrates an interesting loading animation of each card before it is presented to the user. The act of turning a face down card up to display the cards that belong in our website's inventories (aka APIs and local storage).
 
 Then below that is a general summary of how the site works.
-![Homepage](assets\images\homepagescreencap.png)
+<<<<<<< HEAD
+
+![Homepage](https://github.com/VHarris113/project-one/blob/css/assets/images/homepagescreencap.png)
 
 ## Collection Page
 
@@ -22,7 +24,7 @@ The collection page allows for a user to store their collection and reference fo
 
 Thanks to the search event listener, we are able to allow the user to type in a Pokemon name and call it to the scrollbar below. As for the main feature, the collection area, is a use of local storage that allows us to add, remove, drag, drop, and reorder cards that the user may possess in their collection.
 
-![Collection]()
+![Collection](https://github.com/VHarris113/project-one/blob/css/assets/images/collectionscreencap.png)
 
 ## Trade Page
 The final page, our trade page, offers the trader the ability to compare their card with a possible trade. The left hand side will have the trader's collection, and on the right they can search for the card that is offered to trade. Thanks to our API, we know the mid-price range for each card.
@@ -41,10 +43,11 @@ We also used a currency API to allow for the user to switch their type of curren
 
 ## User Story
 
-As a casual Pokémon card collector, I want to easily be able to gauge the fairness of any trade I may partake in. 
+As a casual Pokémon card collector,
+I want to easily be able to gauge the fairness of any trade I may partake in.
 When I enter my card,
-I am shown its price. 
+I am shown its price.
 When I enter the trade offer card,
-I am shown its price. 
+I am shown its price.
 When I add more cards to either side,
 They are shown together with the previous entries and the overall price updates at bottom of each section
