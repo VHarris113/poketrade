@@ -66,10 +66,16 @@ img:hover {
     padding-bottom: 10%;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    background-color: #43464b;
     margin-top: 26%;
     margin-bottom: 20%;
     border-radius: 5px;
+}
+
+.blank {
+    background-color: #0961d3;
+}
+.shown {
+    background-color: #43464b;
 }
 
 .goodBadImage {
@@ -78,6 +84,7 @@ img:hover {
     border: medium solid darkslategray;
     border-radius: 4px;
 }
+
 .container {
     display: flex;
     height: 85vh;
@@ -157,7 +164,7 @@ img:hover {
 
 #searchResults {
     border: solid #5b6770;
-    background-color: #5b6770;
+    background-color: #43464b;
     font: 20px;
     font-weight: bold;
     width: 500px;
