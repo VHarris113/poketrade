@@ -204,7 +204,8 @@ function reloadCollection() {
     var getMyCard = storedItemList[i];
     var collectionImg = $("<img>");
     var collectionPrice = $("<p id='collectionPrice'>");
-    var deleteButton = $("<button>");
+    var cardBreak = $("<hr />");
+    // divs for styling
     var collectionDisplay = $("<div>");
     var footerDisplay = $("<div>");
     // deleteButton.id = getMyCard.id;
@@ -216,7 +217,7 @@ function reloadCollection() {
     collectionPrice.text("$" + getMyCard.price);
     footerDisplay.addClass("collectionFooter");
     // append to sortableEl
-    footerDisplay.append(collectionPrice, deleteButton);
+    footerDisplay.append(collectionPrice, cardBreak);
     collectionDisplay.append(collectionImg, footerDisplay);
     collectionResultsEl.append(collectionDisplay);
     // indexReset();
