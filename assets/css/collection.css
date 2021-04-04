@@ -36,7 +36,6 @@ img:hover {
 }
 
 .pageContainer {
-  /* background-color: #43464b; */
   background-color: #43464b;
   padding: 40px;
 }
@@ -47,13 +46,44 @@ img:hover {
   margin: 10px;
 }
 
-.list-group-item.active {
-  background-color: #f5b342;
+.btn-outline-success {
+  background-color: #4254f5;
+  border-color: #43464b;
+  color: #f0f1f3
 }
+
+.btn-info {
+  background-color: #1ce458;
+  color: #000000
+}
+
+.btn-secondary {
+  background-color: #f7a900;
+  color: #000000;
+}
+
+.btn-info:hover,
+.btn-secondary:hover,
+.btn-outline-success:hover {
+  background-color: #f70000
+}
+
+.form-inline {
+  justify-content: center;
+}
+
+/* .list-group-item.active {
+  background-color: #f5b342;
+} */
 
 #searchColumn {
   padding-right: 30px;
   position: initial;
+}
+
+#searchColumn div {
+  display: flex;
+  justify-content: center;
 }
 
 #card-display {
@@ -107,31 +137,18 @@ img:hover {
 #collection-header {
     text-decoration: underline 2px;
     text-underline-position: under;
+    margin-bottom: 40px;
 }
-/* #sortable {
-  width: 100%;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-} */
-
-/* #sortable li {
-  margin: 3px 3px 3px 0;
-  padding: 1px;
-  float: left;
-  width: 100px;
-  height: 90px;
-  font-size: 4em;
-  text-align: center;
-} */
 
 #sortable {
   width: 100%;
-  flex-wrap: wrap;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: space-evenly;
+}
+
+#sortable div {
+  margin: -12px;
+  margin-bottom: -70px;
 }
 
 #sortable li {
@@ -142,16 +159,40 @@ img:hover {
 } 
 
 #sortable img {
-  max-height: 70%
-} 
+  max-height: 70%;
+  padding: 10px;
+}
+
+#card-display hr {
+  border-top: 10px solid rgba(0, 0, 0, 0.1);
+}
+
+
+/* #sortable {
+width: 100%;
+list-style-type: none;
+margin: 0;
+padding: 0;
+} */
+
+/* #sortable li {
+margin: 3px 3px 3px 0;
+padding: 1px;
+float: left;
+width: 100px;
+height: 90px;
+font-size: 4em;
+text-align: center;
+} */
+
 /* Doesnt exist in the html */
 /* 
 #cardSelector {
-  height: 200px;
-  background-color: red;
+height: 200px;
+background-color: red;
 } */
 /* makes the background of the links in the nav gray, doesn't exist on any other page, no text deco even without this */
 /* a {
-    background-color: gray;
-    text-decoration: none;
+  background-color: gray;
+  text-decoration: none;
 } */
