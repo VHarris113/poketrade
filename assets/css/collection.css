@@ -26,12 +26,14 @@ h1 {
 img:hover {
   -webkit-box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
   box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
-
 }
 
-img:active {
-  -webkit-box-shadow: 0px 2px 16px 4px white;
-  box-shadow: 0px 2px 16px 4px white;
+aside {
+  margin-right: 1px;
+}
+
+.row {
+  margin-left: -157px;
 }
 
 .navbar-brand {
@@ -93,8 +95,7 @@ img:active {
 }
 
 #searchColumn {
-  padding-right: 25px;
-  padding-left: 10px;
+  padding-right: 30px;
   position: initial;
 }
 
@@ -103,8 +104,10 @@ img:active {
   border: solid #43464b;
   background-color: #43464b;
   font: 20px;
-  height: 80%;
-  overflow: scroll;
+  font-weight: bold;
+  width: 500px;
+  height: 750px;
+  overflow: auto;
 }
 
 #card-display img {
@@ -128,18 +131,12 @@ img:active {
   font-family: "Bebas Neue", cursive;
 }
 
-.row {
-  margin-left: 0px;
-  margin-right: 0px;
-  padding-left: 15px;
-}
-
 #cardsColumn {
+  position: relative;
   display: flex;
   justify-content: space-around;
   padding-right: 0px;
-  margin-left: -32px;
-  
+  margin-left: 95px;
 }
 
 #cardsRow {
@@ -148,18 +145,13 @@ img:active {
   justify-content: space-around;
   align-items: space-around;
   margin: 20px;
-  margin-left: 20px;
-  width: 95%;
+  width: 87%;
 }
 
 #collection-header {
     text-decoration: underline 2px;
     text-underline-position: under;
     margin-bottom: 40px;
-}
-
-.formCust {
-  padding: 0px;
 }
 
 #sortable {
@@ -184,15 +176,21 @@ img:active {
 #card-display hr {
   border-top: 10px solid rgba(0, 0, 0, 0.1);
 }
-/* 
-@media screen and (max-width: 768px) {
-  /* Use flex-direction to stack the navbar, sidebar, and body */
-  /* header,
-  main {
-    flex-direction: column; */
-  /* } */
-  /* Make the sidebar stack below the body */
-  /* aside {
-    order: 2;
-  } */
-/* } */
+
+/* @media screen and (max-width: 768px) {
+  main,
+  aside {
+    flex-direction: column;
+  }
+  nav {
+    resize: 15%;
+  }
+  aside {
+    order: 1px;
+  }
+  
+  header {
+    size: 10px;
+  }
+  
+} */
