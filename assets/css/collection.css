@@ -1,6 +1,6 @@
 * {
   font-family: Georgia, "Times New Roman", Times, serif;
-  width: -moz-fit-content;
+  box-sizing: border-box;
 }
 
 nav {
@@ -172,23 +172,14 @@ img:hover {
   border-top: 10px solid rgba(0, 0, 0, 0.1);
 }
 
-/* @media screen and (max-width: 768px) {
-
-  main,
-  aside {
+@media screen and (max-width: 768px) {
+  /* Use flex-direction to stack the navbar, sidebar, and body */
+  header,
+  main {
     flex-direction: column;
   }
-
-  nav {
-    resize: 15%;
-  }
-
+  /* Make the sidebar stack below the body */
   aside {
-    order: 1px;
+    order: 2;
   }
-  
-  header {
-    size: 10px;
-  }
-  
-} */
+}
