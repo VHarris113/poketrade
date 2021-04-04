@@ -8,6 +8,7 @@ var pokeName;
 
 var myCardImg = $("#img-holder");
 var tradeImg = $("#trade-img-holder");
+var searchResultImg = $("#searchResults")
 
 var button = $("#matchBtn");
 
@@ -269,17 +270,70 @@ function getTradeCard() {
     .then(function (data) {
       console.log(data);
       for (var i = 0; i < data.data.length; i++) {
-        imgUrl = data.data[i].images.small;
-        var imgEl = $("<img>");
-        imgEl.attr("src", imgUrl);
-        tradeImg.append(imgEl);
+        if (data.data[i].tcgplayer && data.data[i].tcgplayer.prices.normal) {
+          var imgUrl = data.data[i].images.small;
+          var priceTag = data.data[i].tcgplayer.prices.normal.mid;
+          var cardId = data.data[i].id;
+          // console.log(priceTag);
+          var aTag = $("<a>");
+          var imageEl = $("<img>")
+          imageEl.addClass("hover-shadow");
+          var priceEl = $("<p>")
+          var pageBreak = $("<hr size='3' />")
+          priceEl.text("$" + priceTag + " - " + i);
+          imageEl.attr("src", imgUrl);
+          imageEl.attr("data-index", i);
+          imageEl.attr("data-price", priceTag);
+          imageEl.attr("data-id", cardId);
+          imageEl.attr("data-img", imgUrl);
+          aTag.append(imageEl, priceEl);
+          searchResultImg.append(aTag, pageBreak);
+      } else if (data.data[i].tcgplayer && data.data[i]?.tcgplayer.prices.holofoil){
+          var imgUrl = data.data[i].images.small;
+          var priceTag = data.data[i].tcgplayer.prices.holofoil.mid;
+          var cardId = data.data[i].id;
+          // console.log(priceTag);
+          var aTag = $("<a>");
+          var imageEl = $("<img>");
+          imageEl.addClass("over-shadow");
+          var priceEl = $("<p>")
+          var pageBreak = $("<hr size='3' />")
+          priceEl.text("$" + priceTag + " - " + i);
+          imageEl.attr("src", imgUrl);
+          imageEl.attr("data-index", i);
+          imageEl.attr("data-price", priceTag);
+          imageEl.attr("data-id", cardId);
+          imageEl.attr("data-img", imgUrl);
+          aTag.append(imageEl, priceEl);
+          searchResultImg.append(aTag, pageBreak);
+      } else if (!data.data[i].tcgplayer) {
+          // console.log("next");
+          var imgUrl = data.data[i].images.small;
+          var cardId = data.data[i].id;
+          // var priceTag = data.data[i].tcgplayer.prices.holofoil.mid;
+          // console.log(priceTag);
+          var aTag = $("<a>");
+          var imageEl = $("<img>");
+          imageEl.addClass("hover-shadow");
+          var priceEl = $("<p>")
+          var pageBreak = $("<hr size='3' />")
+          priceEl.text("$0.00" + " - " + i);
+          imageEl.attr("src", imgUrl);
+          imageEl.attr("data-index", i);
+          imageEl.attr("data-price", priceTag);
+          imageEl.attr("data-id", cardId);
+          imageEl.attr("data-img", imgUrl);
+          aTag.append(imageEl, priceEl);
+          searchResultImg.append(aTag, pageBreak);
       }
       // button.on('click', function(event) {
       //     event.preventDefault();
       //     localStorage.setItem("storedCard", JSON.stringify(data.data[0].images.small));
       // })
-    });
-}
+    }
+})
+
+};
 mySearch.on("submit", function (event) {
   event.preventDefault();
   myCardImg.empty();
@@ -288,7 +342,7 @@ mySearch.on("submit", function (event) {
 
 searchForm.on("submit", function (event) {
   event.preventDefault();
-  tradeImg.empty();
+  searchResultImg.empty();
   // if(tradeInput.val() === '') {
   //     alert('Please enter a valid Pokemon name.');
   // } else {
