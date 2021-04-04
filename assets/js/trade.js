@@ -14,6 +14,9 @@ var searchResultImg = $("#searchResults");
 
 var button = $("#matchBtn");
 
+var partnerCollectionPrices = [];
+var partnerPriceTotal = 0
+
 var convertedPrice1El = $("#convertedPrice1");
 var convertedPrice2El = $("#convertedPrice2");
 var matchBut = $("#matchBtn");
@@ -425,9 +428,6 @@ mySearch.on("submit", function (event) {
 });
 
 partnerTradeButton.on("click", function () {
-  // console.log(requestUrl);
-  console.log("Card added to collection.");
-
   var storedItem = {
     image: cardImg,
     price: cardPrice,
@@ -437,10 +437,30 @@ partnerTradeButton.on("click", function () {
   };
   console.log(storedItem);
   var partnerTradeDisplayCard = $("<img>");
+  var partnerPriceDisplay = $("<div>");
+  var partnerCollectionDisplay = $("<div>");
+  var partnerDeleteButton = $("<button>")
+  var partnerTradeItemDisplay = $("<div>")
+  partnerDeleteButton.id = storedItem.id;
+  partnerDeleteButton.text("X");
   partnerTradeDisplayCard.attr("src", storedItem.image);
-  partnerTradeDisplay.append(partnerTradeDisplayCard);
+  partnerPriceDisplay.text("$" + storedItem.price);
+  partnerTradeItemDisplay.append(partnerPriceDisplay, partnerDeleteButton);
+  partnerCollectionDisplay.append(partnerTradeDisplayCard, partnerTradeItemDisplay);
+  partnerTradeDisplay.append(partnerCollectionDisplay);
+  console.log(storedItem.price);
+  console.log(partnerCollectionPrices);
+  var priceVal = parseFloat(storedItem.price);
+  partnerCollectionPrices.push(priceVal);
+  console.log(partnerCollectionPrices);
+
+  
   // reloadCollection();
 });
+
+// function addPartnerTradeTotal (){
+
+// };
 
 searchForm.on("submit", function (event) {
   event.preventDefault();
