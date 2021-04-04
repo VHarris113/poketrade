@@ -195,16 +195,11 @@ function currencyConvert(x, y) {
       return response.json();
     })
     .then(function (data) {
-      var lookup = `USD_${x}`;
-      console.log(lookup);
-      console.log(`data.${lookup}`);
-      
-      
-     
-      
+      console.log(data);
+      console.log(Object.values(data));
+      var lookupValue = Object.values(data);
+      var exchangeRate = lookupValue[0];
       var yNum = parseInt(y, 10);
-      
-      var exchangeRate = lookup;
       console.log(exchangeRate);
       console.log(typeof exchangeRate);
       var newValue = yNum * exchangeRate;
