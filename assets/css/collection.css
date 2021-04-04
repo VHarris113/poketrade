@@ -1,6 +1,6 @@
 * {
   font-family: Georgia, "Times New Roman", Times, serif;
-  width: -moz-fit-content;
+  box-sizing: border-box;
 }
 
 nav {
@@ -170,4 +170,16 @@ img:hover {
 
 #card-display hr {
   border-top: 10px solid rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+  /* Use flex-direction to stack the navbar, sidebar, and body */
+  header,
+  main {
+    flex-direction: column;
+  }
+  /* Make the sidebar stack below the body */
+  aside {
+    order: 2;
+  }
 }
