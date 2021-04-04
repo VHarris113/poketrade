@@ -3,6 +3,8 @@ var tradeInput = $("#tradeSearchInput");
 var searchForm = $("#tradeSearch");
 var mySearchInput = $("#mySearchInput");
 var mySearch = $("#mySearch");
+var partnerTradeButton = $("#partner-add-to-trade");
+var partnerTradeDisplay = $("#trade-img-holder");
 
 var pokeName;
 
@@ -18,6 +20,9 @@ var matchBut = $("#matchBtn");
 var currencySelection = $("#currency");
 var cardVal = $("#collectionPrice").text();
 var tradeCardVal = $("#tradePrice").text();
+var goodTradeEl = $("#goodTrade");
+var badTradeEl = $("#badTrade");
+var tradeEvalEl = $("#tradeEval");
 
 //array of currencies
 var currencies = [
@@ -209,6 +214,7 @@ function currencyConvert(x, y) {
   var currencyUrl = `https://free.currconv.com/api/v7/convert?q=USD_${x}&compact=ultra&apiKey=53972c8322e6040cface`;
   if (x == "USD") {
     convertedPrice1El.text(y);
+    evaluateCards();
   } else {
     fetch(currencyUrl)
       .then(function (response) {
@@ -226,6 +232,7 @@ function currencyConvert(x, y) {
         var newValue1 = newValue.toFixed(2);
         console.log(newValue1);
         convertedPrice1El.text("Converted Price = " + newValue1);
+        evaluateCards();
       });
   }
 }
@@ -235,6 +242,7 @@ function currencyConvertTradeCard(x, y) {
 
   if (x == "USD") {
     convertedPrice2El.text(y);
+    evaluateCards();
   } else {
     fetch(currencyUrl)
       .then(function (response) {
@@ -252,8 +260,21 @@ function currencyConvertTradeCard(x, y) {
         var newValue1 = newValue.toFixed(2);
         console.log(newValue1);
         convertedPrice2El.text("Converted Price = " + newValue1);
+        evaluateCards();
       });
   }
+}
+
+function evaluateCards() {
+  console.log(convertedPrice2El);
+  console.log(convertedPrice1El);
+  // if (newValue1 > newValue2) {
+  //   goodTradeEl.classList.remove("hidden");
+  // } else {
+  //   badTradeEl.classList.remove("hidden");
+  // }
+  // tradeEvalEl.classList.remove("blank");
+  // tradeEvalEl.classList.add("shown");
 }
 
 matchBut.on("click", function (event) {
@@ -387,12 +408,12 @@ function getTradeCard() {
             cardIndex = $(this).attr("data-index");
             cardImg = $(this).attr("data-img");
             cardPrice = $(this).attr("data-price");
-            cardId = $(this).attr("data-id");
+            cardDataId = $(this).attr("data-id");
             cardNm = $(this).attr("data-name");
             console.log(cardIndex);
             console.log(cardImg);
             console.log(cardPrice);
-            console.log(cardId);
+            console.log(cardDataId);
             console.log(cardNm);
           }
         });
@@ -404,6 +425,24 @@ mySearch.on("submit", function (event) {
   event.preventDefault();
   myCardImg.empty();
   getMyCard();
+});
+
+partnerTradeButton.on("click", function () {
+  // console.log(requestUrl);
+  console.log("Card added to collection.");
+
+  var storedItem = {
+    image: cardImg,
+    price: cardPrice,
+    id: cardDataId,
+    index: cardIndex,
+    name: cardNm,
+  };
+  console.log(storedItem);
+  var partnerTradeDisplayCard = $("<img>");
+  partnerTradeDisplayCard.attr("src", storedItem.image);
+  partnerTradeDisplay.append(partnerTradeDisplayCard);
+  // reloadCollection();
 });
 
 searchForm.on("submit", function (event) {
