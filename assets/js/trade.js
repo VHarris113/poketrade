@@ -403,7 +403,7 @@ function getTradeCard() {
 
         imageEl.on("click", function (event) {
           var chosenCard = event.target;
-          console.log(chosenCard);
+          // console.log(chosenCard);
           if (chosenCard.matches("img")) {
             cardIndex = $(this).attr("data-index");
             cardImg = $(this).attr("data-img");
@@ -453,14 +453,20 @@ partnerTradeButton.on("click", function () {
   var priceVal = parseFloat(storedItem.price);
   partnerCollectionPrices.push(priceVal);
   console.log(partnerCollectionPrices);
+  addPartnerTradeTotal();
+  // console.log(partnerPriceTotal);
+  // convertedPrice2El.text(partnerPriceTotal);
 
   
   // reloadCollection();
 });
 
-// function addPartnerTradeTotal (){
-
-// };
+function addPartnerTradeTotal (){
+  var sum = partnerCollectionPrices.reduce(function(a, b) {
+    return a + b
+  }, 0);
+  convertedPrice2El.text(sum);
+};
 
 searchForm.on("submit", function (event) {
   event.preventDefault();
