@@ -81,10 +81,6 @@ img:hover {
   position: initial;
 }
 
-#searchColumn div {
-  display: flex;
-  justify-content: center;
-}
 
 #card-display {
   border: solid #43464b;
