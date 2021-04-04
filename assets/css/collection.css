@@ -1,6 +1,6 @@
 * {
   font-family: Georgia, "Times New Roman", Times, serif;
-  box-sizing: border-box;
+  width: -moz-fit-content;
 }
 
 nav {
@@ -104,8 +104,8 @@ img:active {
   background-color: #43464b;
   font: 20px;
   font-weight: bold;
-  height: 100%;
-  overflow: auto;
+  height: 80%;
+  overflow: scroll;
 }
 
 #card-display img {
