@@ -39,10 +39,19 @@
     <main>
         <div id='tradeContainer'>
             <div class="row tradeContentRow">
+                <div class="col-md-2">
+                    <div id="collectionResults" class="col-md-12">
+                    </div>
+                    <div id="tradeEval" class="blank">
+                        <div id="goodTrade" class="hidden"><img src="assets/images/pokemon_good.jpg" alt="Pokemon Good Trade" class="goodBadImage"> Good Trade!</div>
+                        <div id="badTrade" class="hidden"><img src="assets/images/pokemon_bad.png" alt="Pokemon bad trade" class="goodBadImage">Bad Trade!</div>
+                    </div>
+                </div>
                 <div class='col-md-4' id='tradeMyCards'>
+
                     <form id='mySearch'>
                         <input id='mySearchInput' type='search' placeholder='search' aria-label='search'>
-                        <button id='collectionSearchBtn' type='submit'>(s)</button>
+                        <button id='collectionSearchBtn' type='submit'>search</button>
                     </form>
                     <div class='container'>
                         <div class='card '>
@@ -67,25 +76,12 @@
                     </div>
                     <span class="convertedPrice" id="convertedPrice1"></span>
                     </div>
-                <div class="col-md-2" id='matchSelection'>
-                    <!-- presents good trade / bad trade image depending on comparison -->
-                    <div id="tradeEval" class="blank">
-                        <div id="goodTrade" class="hidden"><img src="assets/images/pokemon_good.jpg" alt="Pokemon Good Trade" class="goodBadImage"> Good Trade!</div>
-                        <div id="badTrade" class="hidden"><img src="assets/images/pokemon_bad.png" alt="Pokemon bad trade" class="goodBadImage">Bad Trade!</div>
-                    </div>
-                    <button id='matchBtn' class="middleButtons">Match</button>
 
-                    <form action="/action_page.php" class="dropDownMenu">
-                        <label for="currency" class="currencyBtn ">Currency:</label>
-                        <select name="currency" id="currency" class="options"></select>
-                    </form>
-                    
-                </div>
                 <div id='tradeNewCards' class='col-md-4'>
                 <div></div>
                     <form id='tradeSearch' class="display-inline">
                         <input id='tradeSearchInput' type='search' placeholder='search' aria-label='search'>
-                        <button id='tradeSearchBtn' type='submit'>(s)</button>
+                        <button id='tradeSearchBtn' type='submit'>search</button>
                         <button id="partner-add-to-trade" type="button">Add to trade</button>
                     </form>
                     
@@ -97,7 +93,22 @@
                     </div>
                     <span class="convertedPrice" id="convertedPrice2"></span>
                 </div>
-                <div id="searchResults" class="col-md-2">
+                <div id="sideContainer" class="col-md-2">
+                    <div id="searchResults" class="col-md-12">
+                    </div>
+                    <div id='matchSelection'>
+                        <!-- presents good trade / bad trade image depending on comparison -->
+                        <!-- <div id="tradeEval" class="blank">
+                            <div id="goodTrade" class="hidden"><img src="assets/images/pokemon_good.jpg" alt="Pokemon Good Trade" class="goodBadImage"> Good Trade!</div>
+                            <div id="badTrade" class="hidden"><img src="assets/images/pokemon_bad.png" alt="Pokemon bad trade" class="goodBadImage">Bad Trade!</div>
+                        </div> -->
+                        <button id='matchBtn' class="middleButtons">Match</button>
+
+                        <form action="/action_page.php" class="dropDownMenu">
+                            <label for="currency" class="currencyBtn ">Currency:</label>
+                            <select name="currency" id="currency" class="options"></select>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

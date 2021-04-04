@@ -61,6 +61,8 @@ aside {
   background-color: #1ce458;
   color: #000000;
   width: 500px;
+  margin: -11px;
+  margin-left: 184px;
 
 }
 
@@ -70,7 +72,7 @@ aside {
 }
 
 .form-inline {
-  justify-content: center;
+  margin: 170px;
 }
 
 .addRemove {
@@ -97,6 +99,7 @@ aside {
 #searchColumn {
   padding-right: 30px;
   position: initial;
+  margin-right: 1px;
 }
 
 
@@ -105,9 +108,12 @@ aside {
   background-color: #43464b;
   font: 20px;
   font-weight: bold;
-  width: 500px;
-  height: 750px;
-  overflow: auto;
+  width: 502px;
+  height: 700px;
+  overflow: scroll;
+  overflow-x: hidden;
+  justify-content: 1px;
+  margin: 12px;
 }
 
 #card-display img {
