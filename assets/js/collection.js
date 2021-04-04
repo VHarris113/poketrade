@@ -21,7 +21,7 @@ var cardNormal = false;
 var cardIndex;
 var cardImg;
 var cardPrice;
-var cardId;
+var cardDataId;
 var cardNm;
 var storedItemList = [];
 
@@ -56,7 +56,7 @@ addButton.on("click", function () {
   var storedItem = {
     image: cardImg,
     price: cardPrice,
-    id: cardId,
+    id: cardDataId,
     index: cardIndex,
     name: cardNm,
   };
@@ -67,9 +67,12 @@ addButton.on("click", function () {
   reloadCollection();
 });
 
+// Initial function
 $(function () {
+    // makes our stored cards sortable in collection page
   $("#sortable").sortable();
   $("#sortable").disableSelection();
+  // gets local storage upon reload
   reloadCollection();
 });
 
@@ -155,12 +158,12 @@ function getApi() {
             cardIndex = $(this).attr("data-index");
             cardImg = $(this).attr("data-img");
             cardPrice = $(this).attr("data-price");
-            cardId = $(this).attr("data-id");
+            cardDataId = $(this).attr("data-id");
             cardNm = $(this).attr("data-name");
             console.log(cardIndex);
             console.log(cardImg);
             console.log(cardPrice);
-            console.log(cardId);
+            console.log(cardDataId);
             console.log(cardNm);
           }
         });
@@ -184,9 +187,10 @@ searchForm.on("submit", function (event) {
 function cardDeleteButton() {
   console.log($(this));
   console.log("Card has been removed from collection.");
-  var id = $(this).attr("id");
+  var id = $(this).attr('data-id');
   console.log(id);
-  var filteredList = storedItemList.filter((item) => item.id !== id);
+  console.log(cardDataId);
+  var filteredList = storedItemList.filter((item) => item.cardDataId !== id);
   console.log(filteredList);
   localStorage.setItem("storedCards", JSON.stringify(filteredList));
 
