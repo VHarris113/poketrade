@@ -87,7 +87,7 @@ img:hover {
 
 .container {
     display: flex;
-    height: 85vh;
+    height: 80vh;
     padding: 20px;
     /* box-sizing: content-box; */
     margin-left: 0px;
