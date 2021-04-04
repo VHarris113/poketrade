@@ -54,16 +54,12 @@ img:hover {
 
 .btn-info {
   background-color: #1ce458;
-  color: #000000
-}
-
-.btn-secondary {
-  background-color: #f7a900;
   color: #000000;
+  width: 500px;
+
 }
 
 .btn-info:hover,
-.btn-secondary:hover,
 .btn-outline-success:hover {
   background-color: #f70000
 }
@@ -92,10 +88,6 @@ img:hover {
 .collectionFooter button:hover {
   background-color: #f70000;
 }
-
-/* .list-group-item.active {
-  background-color: #f5b342;
-} */
 
 #searchColumn {
   padding-right: 30px;
@@ -139,7 +131,7 @@ img:hover {
   display: flex;
   justify-content: space-around;
   padding-right: 0px;
-  margin-left: 20px;
+  margin-left: 95px;
 }
 
 #cardsRow {
@@ -148,7 +140,7 @@ img:hover {
   justify-content: space-around;
   align-items: space-around;
   margin: 20px;
-  width: 80%;
+  width: 87%;
 }
 
 #collection-header {
@@ -162,11 +154,6 @@ img:hover {
   display: flex;
   flex-wrap: wrap;
 }
-
-/* #sortable div {
-  margin: -12px;
-  margin-bottom: -70px;
-} */
 
 #sortable li {
   width: 50px;
@@ -184,33 +171,3 @@ img:hover {
 #card-display hr {
   border-top: 10px solid rgba(0, 0, 0, 0.1);
 }
-
-
-/* #sortable {
-width: 100%;
-list-style-type: none;
-margin: 0;
-padding: 0;
-} */
-
-/* #sortable li {
-margin: 3px 3px 3px 0;
-padding: 1px;
-float: left;
-width: 100px;
-height: 90px;
-font-size: 4em;
-text-align: center;
-} */
-
-/* Doesnt exist in the html */
-/* 
-#cardSelector {
-height: 200px;
-background-color: red;
-} */
-/* makes the background of the links in the nav gray, doesn't exist on any other page, no text deco even without this */
-/* a {
-  background-color: gray;
-  text-decoration: none;
-} */
