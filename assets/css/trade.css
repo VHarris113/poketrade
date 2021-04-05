@@ -79,10 +79,11 @@ box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
 }
 
 .btn:hover {
-    border: none;
     margin-bottom: 10px;
+    border: solid;
     color: #eceaf1;
     background-color: #f54905;
+    font-size: 0.75rem;
 }
 
 .goodBadImage {
