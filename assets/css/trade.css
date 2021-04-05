@@ -30,10 +30,12 @@ box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
     justify-content: center;
     float:left;
     margin-top: 10px;
-    margin-left: 40px;
-    margin-right: 50px;
+    margin-left: 0px;
+    margin-right: 0px;
     width: 100%;
-    padding: 14px;
+    padding: 1.8%;
+    padding-left: 3.5%;
+    padding-right: 3.5%;
     
 }
 
@@ -45,7 +47,7 @@ box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
 
 .submitButton {
     background-color: lightgray;
-    border: medium solid darkslategray;
+    border: medium solid  #43464b;
 }
 
 .convertedPrice {
@@ -56,12 +58,13 @@ box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
     color: #302f33;
     border: medium solid #302f33;
     width: 70%;
-    height: 6%;
+    height: 44px;
     font-family: 'Montserrat', sans-serif;
     font-weight: medium;
     padding-right: 3%;
     padding-top: 2%;
 }
+
 
 .blank {
     background-color: #0961d3;
@@ -71,11 +74,12 @@ box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
 }
 
 .btn {
-    margin-bottom: 10px;
-    border: solid #302f33;
+    margin-bottom: 0px;
+    border: solid   #43464b;
     color: white;
     background-color: #1505f5;
     font-size: 0.75rem;
+    border-radius: 0px;
 }
 
 .btn:hover {
@@ -102,6 +106,7 @@ box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
     border-radius: 5px;
     background-color: #43464b;
     border: thick solid #43464b;
+    margin-bottom: 2%;
     
 }
 .hidden {
@@ -112,7 +117,7 @@ box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
     display: block;
     margin-bottom: 10px;
     width: 95%;
-    border: thick solid #43464b;
+    border: thick solid  #43464b;
     color: white;
     font-size: 1.5em;
 }
@@ -152,6 +157,7 @@ box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
     flex-direction: column;
     align-items: center; 
     justify-content: flex-start;
+    margin-top: 10%;
      
 } 
 
@@ -168,7 +174,7 @@ box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
 }
 
 #tradeSearch {
-    padding-bottom: 10px;
+    padding-bottom: 2px;
     padding-left: 5px; 
 }
 
@@ -187,9 +193,12 @@ box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
     background-color: #43464b;
     font: 20px;
     font-weight: bold;
-    width: 500px;
+    width: 100%;
     height: 750px;
     overflow: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    
 }
 
 #searchResults img {
@@ -197,7 +206,7 @@ box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
     min-width: 75%;
     margin-top: 15pt;
     margin-bottom: 15pt;
-    margin-left: 20pt;
+    margin-left: 10%;
 }
 
 #searchResults hr {
@@ -214,9 +223,11 @@ box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
     background-color: #43464b;
     font: 20px;
     font-weight: bold;
-    width: 500px;
+    width: 100%;
     height: 750px;
     overflow: auto;
+    text-align: center;
+    margin-right: 5%;
 }
 
 #collectionResults img {
@@ -224,7 +235,7 @@ box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
     min-width: 75%;
     margin-top: 15pt;
     margin-bottom: 15pt;
-    margin-left: 20pt;
+    margin-left: 0pt;
 }
 
 #collectionResults hr {
@@ -244,25 +255,23 @@ box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
     flex-wrap:wrap;
     flex-direction: row;
     overflow: auto;
-    /* font: 20px; */
-    /* font-weight: bold; */
-    /* width: 500px;
-    height: 750px; */
+    
   }
   
+#tradeMyCards {
+    padding-left: 3%;
+}
 #tradeMyCards img {
     max-width: 75%;
     min-width: 75%;
 }
 
 #tradeMyCards .btn {
-    margin-bottom: 16pt;
+    margin-bottom: 2px;
 }
 
 #trade-img-holder img {
-    /* max-height: 50%; */
     max-width: 75%;
-    /* min-height: 50%; */
     min-width: 75%;
 }
 
@@ -274,4 +283,20 @@ box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
     flex-wrap:wrap;
     flex-direction: row;
     overflow: auto;
+}
+#tradeNewCards {
+    padding-right: 3%;
+}
+
+#tradePrice {
+    text-align: center;
+}
+.displayColumn {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.displayColumn2 {
+    padding-left: 0px;
+    padding-right: 0px;
 }
