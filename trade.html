@@ -39,42 +39,49 @@
     <main>
         <div id='tradeContainer'>
             <div class="row tradeContentRow">
+
+                <!-- left search card from card collections -->
                 <div class="col-md-2">
                     <div id="collectionResults" class="col-md-12">
                     </div>
-                    <div id="tradeEval" class="blank">
-                        <div id="goodTrade" class="hidden"><img src="assets/images/pokemon_good.jpg" alt="Pokemon Good Trade" class="goodBadImage"> Good Trade!</div>
+                    <div id="tradeEval" >
+                        <div id="goodTrade" class="hidden" >
+                            <img src="assets/images/pokemon_good.jpg"
+                                alt="Pokemon Good Trade" class="goodBadImage"> Good Trade!</div>
                         <div id="badTrade" class="hidden"><img src="assets/images/pokemon_bad.png" alt="Pokemon bad trade" class="goodBadImage">Bad Trade!</div>
                     </div>
                 </div>
+
+                <!-- 2nd column - displays cards from current collection sought for trade -->
                 <div class='col-md-4' id='tradeMyCards'>
+<<<<<<< HEAD
+                    <button id='collection-to-trade' class="mb-2" type='button'>Add to trade</button>
+=======
                         <button class="btn" id='collection-to-trade' class="mb-2" type='button'>Add to Trade</button>
+>>>>>>> 5610b7d0a700eda2d33977e3e310a233247817ec
                     <div class='container'>
-                        <!-- Placeholder card to complete currency function -->
-
-
                         <div id="my-trade-display"></div>
-
-
-
                     </div>
+                    <span id="myCollectionTotal"></span>
                     <span class="convertedPrice" id="convertedPrice1"></span>
-                    </div>
+                </div>
 
+
+                <!-- 3rd column displaying card sought to trade for -->
                 <div id='tradeNewCards' class='col-md-4'>
-                <div></div>
                     <form id='tradeSearch' class="display-inline">
                         <input id='tradeSearchInput' type='search' placeholder='search' aria-label='search'>
                         <button class="btn" id='tradeSearchBtn' type='submit'>Search</button>
                         <button class="btn" id="partner-add-to-trade" type="button">Add to trade</button>
                     </form>
-                    
+
                     <div class='container background'>
-                            <!-- Create this element in JQuery getting api img and appending to <p> -->
-                            <div id='trade-img-holder'>
-                            </div>
-                            <!-- Create <p> elements and append to card-content -->
+                        <!-- Create this element in JQuery getting api img and appending to <p> -->
+                        <div id='trade-img-holder'>
+                        </div>
+                        <!-- Create <p> elements and append to card-content -->
                     </div>
+                    <span id="tradeCollectionTotal"></span>
                     <span class="convertedPrice" id="convertedPrice2"></span>
                 </div>
                 <div id="sideContainer" class="col-md-2">
