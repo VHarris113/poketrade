@@ -7,27 +7,24 @@ var partnerTradeButton = $("#partner-add-to-trade");
 var partnerTradeDisplay = $("#trade-img-holder");
 var myTradeButton = $("#collection-to-trade");
 var myTradeDisplay = $("#my-trade-display")
-
 var pokeName;
-
 var myCardImg = $("#img-holder");
 var tradeImg = $("#trade-img-holder");
 var searchResultImg = $("#searchResults");
-
 var button = $("#matchBtn");
-
 var partnerCollectionPrices = [];
 var partnerPriceTotal = 0;
-
 var myCollectionPrices = [];
 var myPriceTotal = 0;
-
 var convertedPrice1El = $("#convertedPrice1");
 var convertedPrice2El = $("#convertedPrice2");
 var matchBut = $("#matchBtn");
 var currencySelection = $("#currency");
-var cardVal = $("#collectionPrice").text();
-var tradeCardVal = $("#tradePrice").text();
+var myCollectionTotalEl = $("#myCollectionTotal");
+var tradeCollectionTotalEl = $("tradeCollectionTotal");
+var goodTradeEl = $("#goodTrade");
+var badTradeEl = $('#badTrade');
+var tradeEvalEl = $('#tradeEval');
 
 //array of currencies
 var currencies = [
@@ -202,6 +199,108 @@ var currencies = [
 var storedItemList = [];
 var collectionResultsEl = $('#collectionResults')
 
+function currencyConvert(x, y) {
+  var currencyUrl = `https://free.currconv.com/api/v7/convert?q=USD_${x}&compact=ultra&apiKey=53972c8322e6040cface`;
+  if (x == "USD") {
+    convertedPrice1El.text(y);
+    evaluateCards();
+  } else {
+    fetch(currencyUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+        console.log(Object.values(data));
+        var lookupValue = Object.values(data);
+        var exchangeRate = lookupValue[0];
+        var yNum = parseInt(y, 10);
+        console.log(exchangeRate);
+        console.log(typeof exchangeRate);
+        var newValue = yNum * exchangeRate;
+        var newValue1 = newValue.toFixed(2);
+        console.log(newValue1);
+        convertedPrice1El.text("Converted Price = " + newValue1);
+        evaluateCards();
+      });
+  } 
+}
+
+function currencyConvertTradeCard(x, y) {
+  var currencyUrl = `https://free.currconv.com/api/v7/convert?q=USD_${x}&compact=ultra&apiKey=53972c8322e6040cface`;
+
+  if (x == "USD") {
+    convertedPrice2El.text(y);
+    evaluateCards();
+  } else {
+    fetch(currencyUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+        console.log(Object.values(data));
+        var lookupValue = Object.values(data);
+        var exchangeRate = lookupValue[0];
+        var yNum = parseInt(y, 10);
+        console.log(exchangeRate);
+        console.log(typeof exchangeRate);
+        var newValue = yNum * exchangeRate;
+        var newValue1 = newValue.toFixed(2);
+        console.log(newValue1);
+        convertedPrice2El.text("Converted Price = " + newValue1);
+        evaluateCards();
+      });
+  } 
+}
+
+function evaluateCards() {
+  var price1Text = convertedPrice1El.text();
+  var price2Text = convertedPrice2El.text();
+  var price1 = price1Text.slice(18);
+  var price2 = price2Text.slice(18);
+  var price1Num = parseInt(price1, 10);
+  var price2Num = parseInt(price2, 10);
+  
+  if (price1Num < price2Num) {
+    console.log("yay");
+    goodTradeEl.removeClass("hidden");
+  } else if (price2Num < price1Num) {
+    console.log("boo");
+    badTradeEl.removeClass("hidden");
+  }
+  // tradeEvalEl.removeClass("blank");
+  // tradeEvalEl.addClass("shown");
+}
+
+matchBut.on("click", function (event) {
+  event.preventDefault;
+  var countryCode = currencySelection.val();
+  var cardVal = parseInt(myCollectionTotalEl.text());
+  var tradeCardVal = tradeCollectionTotalEl;
+    
+  //cuts price to 2 digits past dollar
+  // var cardValUs = cardVal.substring(1);
+  // var tradeCardValUs = tradeCardVal.substring(1);
+  // var tradeCVal = tradeCardValUs.split(" ");
+  // var tradeCardValFinal = tradeCVal[0];
+  currencyConvert(countryCode, cardVal);
+  currencyConvertTradeCard(countryCode, tradeCardVal);
+  // currencySymbol(countryCode);
+});
+
+// function to add the list of currencies to the drop-down menu
+function addCurrencies() {
+  for (i = 0; i < currencies.length; i++) {
+    var code = currencies[i];
+    var currencyItem = $(`<option value=${code}>`);
+    var currencyItemText = currencyItem.text(`${code}`);
+    $("#currency").append(currencyItemText);
+  }
+}
+// calls function to add currency list
+addCurrencies();
+
 function reloadCollection() {
   collectionResultsEl.html("");
   storedItemList = JSON.parse(localStorage.getItem("storedCards")) || [];
@@ -270,6 +369,7 @@ function reloadCollection() {
 
 $(function () {
   reloadCollection();
+  
 })
 
 // function currencySymbol(x) {
@@ -288,97 +388,7 @@ $(function () {
 //   })
 // }
 //converts currency with x=country code & y=truncated card value
-function currencyConvert(x, y) {
-  var currencyUrl = `https://free.currconv.com/api/v7/convert?q=USD_${x}&compact=ultra&apiKey=53972c8322e6040cface`;
-  if (x == "USD") {
-    convertedPrice1El.text(y);
-  } else {
-    fetch(currencyUrl)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        console.log(data);
-        console.log(Object.values(data));
-        var lookupValue = Object.values(data);
-        var exchangeRate = lookupValue[0];
-        var yNum = parseInt(y, 10);
-        console.log(exchangeRate);
-        console.log(typeof exchangeRate);
-        var newValue = yNum * exchangeRate;
-        var newValue1 = newValue.toFixed(2);
-        console.log(newValue1);
-        convertedPrice1El.text("Converted Price = " + newValue1);
-      });
-  }
-}
 
-function currencyConvertTradeCard(x, y) {
-  var currencyUrl = `https://free.currconv.com/api/v7/convert?q=USD_${x}&compact=ultra&apiKey=53972c8322e6040cface`;
-
-  if (x == "USD") {
-    convertedPrice2El.text(y);
-  } else {
-    fetch(currencyUrl)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        console.log(data);
-        console.log(Object.values(data));
-        var lookupValue = Object.values(data);
-        var exchangeRate = lookupValue[0];
-        var yNum = parseInt(y, 10);
-        console.log(exchangeRate);
-        console.log(typeof exchangeRate);
-        var newValue = yNum * exchangeRate;
-        var newValue1 = newValue.toFixed(2);
-        console.log(newValue1);
-        convertedPrice2El.text("Converted Price = " + newValue1);
-      });
-  }
-}
-
-function evaluateCards() {
-  var price1Text = convertedPrice1El.text();
-  var price2Text = convertedPrice2El.text();
-  var price1 = price1Text.slice(18);
-  var price2 = price2Text.slice(18);
-  var price1Num = parseInt(price1, 10);
-  var price2Num = parseInt(price2, 10);
-  if (price1Num > price2Num) {
-    goodTradeEl.removeClass("hidden");
-  } else if (price2Num > price1Num) {
-    badTradeEl.removeClass("hidden");
-  }
-  tradeEvalEl.removeClass("blank");
-  tradeEvalEl.addClass("shown");
-}
-
-matchBut.on("click", function (event) {
-  event.preventDefault;
-  var countryCode = currencySelection.val();
-  //cuts price to 2 digits past dollar
-  var cardValUs = cardVal.substring(1);
-  var tradeCardValUs = tradeCardVal.substring(1);
-  var tradeCVal = tradeCardValUs.split(" ");
-  var tradeCardValFinal = tradeCVal[0];
-  currencyConvert(countryCode, cardValUs);
-  currencyConvertTradeCard(countryCode, tradeCardValFinal);
-  // currencySymbol(countryCode);
-});
-
-//function to add the list of currencies to the drop-down menu
-function addCurrencies() {
-  for (i = 0; i < currencies.length; i++) {
-    var code = currencies[i];
-    var currencyItem = $(`<option value=${code}>`);
-    var currencyItemText = currencyItem.text(`${code}`);
-    $("#currency").append(currencyItemText);
-  }
-}
-//calls function to add currency list
-addCurrencies();
 
 //uncomment to test
 //echo convertCurrency(10, 'USD', 'PHP');
@@ -573,14 +583,19 @@ function addPartnerTradeTotal (){
   var sum = partnerCollectionPrices.reduce(function(a, b) {
     return a + b
   }, 0);
-  convertedPrice2El.text(sum);
+  console.log(sum);
+  
+  tradeCollectionTotalEl = sum;
+  console.log(tradeCollectionTotalEl);
+  console.log(typeof tradeCollectionTotalEl);
 };
 
 function addMyTradeTotal(){
   var sum = myCollectionPrices.reduce(function(a, b){
     return a + b
   }, 0);
-  convertedPrice1El.text(sum);
+  
+  myCollectionTotalEl.text(sum);
 }
 
 searchForm.on("submit", function (event) {
