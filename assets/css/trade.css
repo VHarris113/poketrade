@@ -1,7 +1,11 @@
+* {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    width: -moz-fit-content;
+}  
+
 body {
     background-color: #0961d3;
     background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-    
     color: #f0f1f3;
 }
 
@@ -12,8 +16,8 @@ nav {
 }
 
 img:hover {
-    -webkit-box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
-    box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
+-webkit-box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
+box-shadow: 0px 2px 16px 4px rgba(0, 0, 0, 0.55);
   }
 
 .navbar-brand {
@@ -59,12 +63,26 @@ img:hover {
     padding-top: 2%;
 }
 
-
 .blank {
     background-color: #0961d3;
 }
 .shown {
     background-color: #43464b;
+}
+
+.btn {
+    margin-bottom: 10px;
+    border: solid #302f33;
+    color: white;
+    background-color: #1505f5;
+    font-size: 0.75rem;
+}
+
+.btn:hover {
+    border: none;
+    margin-bottom: 10px;
+    color: #eceaf1;
+    background-color: #f54905;
 }
 
 .goodBadImage {
@@ -144,16 +162,17 @@ img:hover {
     font-size: 1.5em;
 }
 
+#matchBtn:hover {
+    background-color: #e6a084;
+}
+
 #tradeSearch {
     padding-bottom: 10px;
     padding-left: 5px; 
 }
 
-
-
-
 #mySearch {
-    padding-bottom: 10px;
+    padding-bottom: 0px;
     padding-left: 5px;
 }
 
@@ -175,6 +194,18 @@ img:hover {
 #searchResults img {
     max-width: 75%;
     min-width: 75%;
+    margin-top: 15pt;
+    margin-bottom: 15pt;
+    margin-left: 20pt;
+}
+
+#searchResults hr {
+    display: block;
+    width: 100%;
+    height: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:rgb(0, 0, 0);
 }
 
 #collectionResults {
@@ -185,6 +216,23 @@ img:hover {
     width: 500px;
     height: 750px;
     overflow: auto;
+}
+
+#collectionResults img {
+    max-width: 75%;
+    min-width: 75%;
+    margin-top: 15pt;
+    margin-bottom: 15pt;
+    margin-left: 20pt;
+}
+
+#collectionResults hr {
+    display: block;
+    width: 100%;
+    height: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:rgb(0, 0, 0);
 }
 
 #trade-img-holder {
@@ -206,6 +254,10 @@ img:hover {
     min-width: 75%;
 }
 
+#tradeMyCards .btn {
+    margin-bottom: 16pt;
+}
+
 #trade-img-holder img {
     /* max-height: 50%; */
     max-width: 75%;
@@ -214,16 +266,11 @@ img:hover {
 }
 
 #my-trade-display {
-        border: solid #43464b;
-        background-color: #43464b;
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap:wrap;
-        flex-direction: row;
-        overflow: auto;
-      }
-
-#collectionResults img {
-    max-width: 75%;
-    min-width: 75%;
+    border: solid #43464b;
+    background-color: #43464b;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap:wrap;
+    flex-direction: row;
+    overflow: auto;
 }

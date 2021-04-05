@@ -30,7 +30,7 @@ The final page, our trade page, offers the trader the ability to compare their c
 
 We also used a currency API to allow for the user to switch their type of currency from what the TCG API offers to their country of origin.
 
-![TradePage]()
+![TradePage]https://github.com/VHarris113/project-one/blob/css/assets/images/tradepagescreeencap.png)
 
 ## Project Power Point
 
