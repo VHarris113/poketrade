@@ -107,6 +107,7 @@ aside {
   height: 700px;
   overflow: scroll;
   overflow-x: hidden;
+  border: 5px solid #5b6770;
 }
 
 #card-display img {
@@ -130,7 +131,7 @@ aside {
   height: 0px;
   margin-left: auto;
   margin-right: auto;
-  background-color:rgb(0, 0, 0);
+  border-top: 5px dashed #2f363a;
 }
 
 
@@ -155,6 +156,8 @@ aside {
   width: 100%;
   margin-left: -100px;
   margin-top: 10px;
+  border: 5px solid #5b6770;
+  border-radius: 15px;
 }
 
 #collection-header {
@@ -181,10 +184,6 @@ aside {
   max-height: 70%;
   border-style: none;
   margin: 10px;
-}
-
-#card-display hr {
-  border-top: 10px solid rgba(0, 0, 0, 0.1);
 }
 
 /* @media screen and (max-width: 768px) {
