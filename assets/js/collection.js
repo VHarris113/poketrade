@@ -37,8 +37,8 @@ function reloadCollection() {
     var collectionDisplay = $("<div>");
     var footerDisplay = $("<div>");
     deleteButton.id = getMyCard.id;
-    console.log(getMyCard.id)
-    // deleteButton.on("click", cardDeleteButton);
+    console.log(deleteButton.id)
+    deleteButton.on("click", cardDeleteButton);
     deleteButton.text("X");
     // adding price and delete button underneath each card in a box for styling
     collectionImg.attr("src", getMyCard.image);
@@ -49,30 +49,29 @@ function reloadCollection() {
     collectionDisplay.append(collectionImg, footerDisplay);
     sortableEl.append(collectionDisplay);
     // indexReset();
-    deleteButton.on('click', function() {
-            
-        var getDelete = storedItemList;
-        console.log(deleteButton.id);
-        // console.log(getDelete);
-        // //   var i = getDelete.data;
-        // console.log(i);
-        // console.log(deleteId);
-        
-        //   console.log($(this));
-        //   console.log(getDelete)
-        console.log("Card has been removed from collection.");
-        var id = $(this).attr('data-id');
-        //   console.log(getDelete.id);
-        //   console.log(cardDataId);
-        var filteredList = storedItemList.filter((item) => item.id !== cardDataId);
-        //   console.log(filteredList);
-        localStorage.setItem("storedCards", JSON.stringify(filteredList));
-
-        reloadCollection();
-    })
+    
   }
     
 
+}
+
+function cardDeleteButton() {
+    
+    // console.log(getDelete);
+    // //   var i = getDelete.data;
+    // console.log(i);
+    // console.log(deleteId);
+    
+    //   console.log($(this));
+    //   console.log(getDelete)
+    console.log("Card has been removed from collection.");
+    var id = $(this).attr('data-id');
+
+    var filteredList = storedItemList.filter((item) => item.key !== id);
+    
+    localStorage.setItem("storedCards", JSON.stringify(filteredList));
+
+    reloadCollection();
 }
 
 addButton.on("click", function () {
